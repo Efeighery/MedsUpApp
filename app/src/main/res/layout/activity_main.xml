@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/greeting"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="20dp"
+        android:text="Welcome to the home page!"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/medicSaveBtn"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/greeting"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="81dp"
+        android:backgroundTint="#979797"
+        android:text="Save medication data" />
+
+    <TextView
+        android:layout_width="385dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="164dp"
+        android:padding="8sp"
+        android:text="Here you can extract text from a photo of a medication item or prescription and add it as an event on a calendar. You can even add a contact so that they'll know you're on track with the meds!"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/recBtn"
+        android:layout_width="168dp"
+        android:layout_height="94dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="317dp"
+        android:backgroundTint="#979797"
+        android:text="Recognise Text"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/calendarBtn"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/greeting"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="461dp"
+        android:backgroundTint="#979797"
+        android:text="Create reminder"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/healthBtn"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/greeting"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="318dp"
+        android:backgroundTint="#979797"
+        android:text="Save health condition"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/contactBtn"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/greeting"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="217dp"
+        android:layout_marginTop="466dp"
+        android:backgroundTint="#979797"
+        android:text="Add a contact"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/profileBtn"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/greeting"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="577dp"
+        android:backgroundTint="#979797"
+        android:text="View profile"
+        android:textSize="20dp" />
+</RelativeLayout>

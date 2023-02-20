@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".AddReminder">
+
+    <TextView android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" android:textStyle="bold"
+        android:textColor="#3B7E3E" android:text="Making a Reminder section"
+        android:textSize="28dp"/>
+
+
+    <TextView android:layout_width="371dp"
+        android:layout_height="wrap_content" android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp" android:layout_marginTop="81dp"
+        android:text="This page gives you two options for how to create a reminder for your medication."
+        android:textSize="20dp"/>
+
+    <TextView android:layout_width="377dp"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true" android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" android:layout_marginStart="23dp"
+        android:layout_marginTop="153dp"
+        android:text="If you want to make a reminder on your Google Calendar and also customise the event to whatever settings you prefer, click on this button below:"
+        android:textSize="20dp"/>
+
+    <Button android:layout_width="185dp"
+        android:layout_height="63dp" android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true" android:layout_centerInParent="true"
+        android:layout_marginStart="113dp" android:layout_marginBottom="393dp"
+        android:backgroundTint="#4CAF50" android:onClick="AddCalendarReminder"
+        android:text="Add event to Google Calendar" android:textAllCaps="false"/>
+
+    <TextView android:layout_width="372dp"
+        android:layout_height="85dp" android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" android:layout_marginBottom="268dp"
+        android:text="Or if you like to create a notification for this at a certain time or date, click this button instead:"
+        android:textSize="20dp"/>
+
+    <Button
+        android:id="@+id/notificationBtn"
+        android:layout_width="185dp"
+        android:layout_height="63dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="109dp"
+        android:layout_marginBottom="191dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Create a medical notification"
+        android:textAllCaps="false" />
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="50dp" android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" android:layout_marginBottom="68dp"
+        android:backgroundTint="#4CAF50" android:text="Return Home" android:id="@+id/homeBtn"
+        android:textAllCaps="false"/>
+</RelativeLayout>
