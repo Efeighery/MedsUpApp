@@ -121,6 +121,10 @@ public class AddContact extends AppCompatActivity {
 
             dia.setContentView(R.layout.alert_dialog_add_new_contact);
 
+            // Using the dialogue object to use the XML file which allows for adding new contacts
+
+            // The Buttons and Text fields will be initialised and declared here by their ids.
+
             EditText cName = dia.findViewById(R.id.conName);
             EditText cEmail = dia.findViewById(R.id.conEmailAdd);
             EditText cPhone = dia.findViewById(R.id.conTelephone);
@@ -128,6 +132,7 @@ public class AddContact extends AppCompatActivity {
             Button addBotn = dia.findViewById(R.id.addCon);
             Button exitBtn = dia.findViewById(R.id.cancelAction);
 
+            // If the user wants to leave, the addContact dialog object method will be cancelled
             exitBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -135,18 +140,22 @@ public class AddContact extends AppCompatActivity {
                 }
             });
 
+            // Here, the add Contact method will allow for a new contact to be added to the database
             addBotn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // With an id, to signify when the contact was added while the other 3 variables will be acquired and added to the Firebase database
                     String cID = "Contact"+ new Date().getTime();
                     String name = cName.getText().toString();
                     String email = cEmail.getText().toString();
                     String phone = cPhone.getText().toString();
 
+                    // If the user hasn't filled one or all text fields needed to save a contact, a notification will warn the user to enter something for the contact to be saved
                     if(name.isEmpty() || email.isEmpty() || phone.isEmpty()){
                         Toast.makeText(context, "All fields have to be filled in to save a contact entry", Toast.LENGTH_LONG).show();
                     }
                     else{
+                        // Otherwise, the contact table will use the id as a child node to help set the newly made contact into the contact table and the user will notify the user
                         databaseReference.child("CONTACTS").child(cID).setValue(new ContactItem(cID, name, email, phone));
                         Toast.makeText(context, "And....Voila!", Toast.LENGTH_LONG).show();
                         dia.dismiss();

@@ -64,11 +64,15 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
 
     @Override
     public void onBindViewHolder(@NonNull ContactRecyclerAdapter.ViewHolder holder, int position) {
+        // Here, the instantiable class (Contacts) is declared into the ArrayList object while this method updates the ViewHolder content
         ContactItem contactItem = contactItemArrayList.get(position);
 
+        // The holder will be where the contact information is updated
         holder.conName.setText("Name: "+contactItem.getName());
         holder.conEmailAd.setText("Name: "+contactItem.getEmail());
         holder.conPhone.setText("Name: "+contactItem.getPhone());
+
+        // In these two button methods, the ViewDialog aspects will take the following contexts and Contacts variables to make the methods work properly
 
         holder.editCon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,17 +90,18 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
             }
         });
 
-
-
     }
 
     public class ViewDialogContactEdit{
+        // This method will be used for when the user wants to change a saved contact
         public void showDialog(Context context, String cID, String name, String email, String phone){
 
+            // Like in the Contact file, a dialogue object will be set to the required functionality (in this case, updating an existing contact)
             final Dialog dialog = new Dialog(context);
             dialog.setCancelable(false);
             dialog.setContentView(R.layout.alert_dialog_add_new_contact);
 
+            // The variables are set and declared here along with the buttons
             EditText conName = dialog.findViewById(R.id.conName);
             EditText conEmailAd = dialog.findViewById(R.id.conEmailAdd);
             EditText conPhone = dialog.findViewById(R.id.conTelephone);
@@ -110,9 +115,19 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
 
             updateContact.setText("Edit contact");
 
+            // If a user wants to leave, then dialogue window will be dismissed
             exitField.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+
+            // If a user wants to update a saved contact, this method will be activated
+            updateContact.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // This will get the variables to allow for edits to be made
                     String alteredName = conName.getText().toString();
                     String alteredEmail = conEmailAd.getText().toString();
                     String alteredPhone = conPhone.getText().toString();
@@ -121,10 +136,12 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
                         Toast.makeText(context, "All fields must be filled!", Toast.LENGTH_SHORT).show();
                     }
                     else{
+                        // Or if any edits weren't made, this message will show
                         if(alteredName.equals(name) && alteredEmail.equals(email) && alteredPhone.equals(phone)){
                             Toast.makeText(context, "Hmm, no edits made", Toast.LENGTH_SHORT).show();
                         }
                         else{
+                            // Otherwise, any changes made will be made to the database entry
                             databaseReference.child("contact").child(cID).setValue(new ContactItem(cID, name, email, phone));
                             Toast.makeText(context, "And the user is updated now", Toast.LENGTH_LONG).show();
                             dialog.dismiss();
@@ -142,14 +159,18 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
         public void showDialog(Context context, String cID){
             final Dialog dialog = new Dialog(context);
 
+            // Like in the Contact file, a dialogue object will be set to the required functionality (in this case, updating an existing contact)
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setCancelable(false);
 
+            // This is used to activate the delete query when the delete button is clicked
             dialog.setContentView(R.layout.view_dialog_remove_contact);
 
+            // Unlike the update method, only the buttons are initialised here
             Button removeCon = dialog.findViewById(R.id.delBtn);
             Button exitBtn = dialog.findViewById(R.id.cancelBtn);
 
+            // If the users wants to exit, then the dialogue will be dismissed
             exitBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -157,6 +178,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
                 }
             });
 
+            // Here, the method will find the id for a saved contact to remove the contact entry, which is then notified to the user as seen here
             removeCon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -177,6 +199,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
+        // The TextViews and buttons for the contact fields and the aforementioned buttons are declared and initialised here
         TextView conName, conPhone, conEmailAd;
 
         Button delCon, editCon;
