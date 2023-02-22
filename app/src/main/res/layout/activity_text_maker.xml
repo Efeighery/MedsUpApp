@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
     tools:context=".TextMaker">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/phoneNo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Phone Number"
+        android:inputType="phone"
+        android:layout_margin="8dp"
+        />
+
+    <EditText
+        android:id="@+id/textMsg"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:hint="Enter Text Message here"
+        android:inputType="textLongMessage"
+        android:layout_margin="15dp"
+        android:gravity="start"
+        />
+
+    <Button
+        android:id="@+id/sendTextBtn"
+        android:layout_width="200dp"
+        android:layout_height="81dp"
+        android:text="Send Message"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#1D83D5"
+        />
+
+    <Button
+        android:id="@+id/returnConBtn"
+        android:layout_width="200dp"
+        android:layout_height="81dp"
+        android:textSize="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#1D83D5"
+        android:text="Leave SMS Area" />
+
+</LinearLayout>
