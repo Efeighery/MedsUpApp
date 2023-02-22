@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, SpeechToText.class));
         });
 
-        /*
+
         conBtn.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, ContactList.class));
+            startActivity(new Intent(MainActivity.this, AddContact.class));
         });
 
-         */
+
         calBtn.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, AddReminder.class));
         });

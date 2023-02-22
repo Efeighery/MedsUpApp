@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="34dp"
         android:layout_marginTop="20dp"
-        android:text="Welcome to the home page!"
+        android:text="Welcome to MedsUpApp!"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="25dp"
         android:textStyle="bold" />
@@ -32,17 +32,31 @@
         android:backgroundTint="#979797"
         android:text="Save medication data" />
 
-    <TextView
-        android:layout_width="385dp"
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="164dp"
-        android:padding="8sp"
-        android:text="Here you can extract text from a photo of a medication item or prescription and add it as an event on a calendar. You can even add a contact so that they'll know you're on track with the meds!"
-        android:textSize="20dp" />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:padding="5dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <TextView
+            android:layout_width="307dp"
+            android:layout_height="115dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="14dp"
+            android:padding="8sp"
+            android:text="Here you can extract text from a photo of a medication item or prescription and add it as an event on a calendar. You can even add a contact so that they'll know you're on track with the meds!"
+            android:textSize="16dp" />
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/recBtn"
@@ -71,8 +85,8 @@
 
     <Button
         android:id="@+id/healthBtn"
-        android:layout_width="162dp"
-        android:layout_height="wrap_content"
+        android:layout_width="169dp"
+        android:layout_height="88dp"
         android:layout_below="@+id/greeting"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -80,7 +94,7 @@
         android:layout_marginStart="212dp"
         android:layout_marginTop="318dp"
         android:backgroundTint="#979797"
-        android:text="Save health condition"
+        android:text="Save diagnosis"
         android:textSize="20dp" />
 
     <Button
@@ -91,7 +105,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="217dp"
-        android:layout_marginTop="466dp"
+        android:layout_marginTop="457dp"
         android:backgroundTint="#979797"
         android:text="Add a contact"
         android:textSize="20dp" />
