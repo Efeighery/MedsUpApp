@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".AddDiagnosis">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="110dp"
+        android:id="@+id/reView"
+        />
+
+
+    <Button android:id="@+id/homeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:backgroundTint="#4CAF50"
+        android:text="Go Home"
+        android:textAllCaps="false"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addDiagBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#509E53"
+        android:text="Add Diagnosis"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+</LinearLayout>
