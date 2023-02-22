@@ -7,6 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/*
+ * Class name: AddReminder.java
+ * Date: 28/12/2022
+ * @author: Eoghan Feighery, x19413886
+ * Version: Revision 1
+ */
+
+/*
+ * @reference: https://www.tutorialspoint.com/how-to-add-calendar-events-in-android-app
+ */
+
+
 public class AddReminder extends AppCompatActivity {
 
     Button notiMakeBtn;
@@ -18,6 +30,7 @@ public class AddReminder extends AppCompatActivity {
 
         notiMakeBtn = findViewById(R.id.notificationBtn);
 
+        // The button that can take a user to the Notification Maker Page is initialised and declared with an Intent object
         notiMakeBtn.setOnClickListener(v -> startActivity(new Intent(AddReminder.this, NotificationCreator.class)));
     }
 

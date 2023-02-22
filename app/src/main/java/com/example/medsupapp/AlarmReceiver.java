@@ -10,14 +10,26 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
+/*
+ * Class name: AlarmReceiver.java
+ * Date: 28/12/2022
+ * @author: Eoghan Feighery, x19413886
+ * Version: Revision 1
+ */
+
+/*
+ * @reference: https://www.youtube.com/watch?v=F3IFF8A-ewE&t=2s
+ */
+
 public class AlarmReceiver extends BroadcastReceiver {
 
+    // A channel ID is used to
     private static final String CHANNEL_ID = "SAMPLE_CHANNEL";
 
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // Gets id and reminder message from the Intent object
+        // Gets the id and reminder message from the Intent object
         int notifID = intent.getIntExtra("notifID", 0);
 
         String note = intent.getStringExtra("note");
@@ -29,7 +41,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 context, 0, makerInt, 0
         );
 
-        // The Notification Manager
+        // The Notification Manager object is used help create a channel needed to save the newly-made notification
         NotificationManager notificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -51,6 +63,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true);
 
+        // And the reminder will trigger based on the designated time the user set it to
         notificationManager.notify(notifID, build.build());
     }
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/item_bg"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/nameCon"
+        android:textSize="20dp"
+        android:text="Contact personnel"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/emailCon"
+        android:textSize="20dp"
+        android:text="Email address"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/phoneCon"
+        android:textSize="20dp"
+        android:text="Phone number"
+        />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:id="@+id/removeBtn"
+            android:layout_margin="4dp"
+            android:textSize="20sp"
+            android:background="#587A30"
+            android:textColor="@color/white"
+            android:text="Remove Entry"
+            android:textAllCaps="false"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:id="@+id/updateBtn"
+            android:layout_margin="4dp"
+            android:textSize="20sp"
+            android:background="#587A30"
+            android:textColor="@color/white"
+            android:text="Edit Entry"
+            android:textAllCaps="false"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
