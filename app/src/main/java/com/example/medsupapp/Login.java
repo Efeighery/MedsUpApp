@@ -38,7 +38,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     // The visual variables from the XML file are initialised and declared
-    private TextView register, forgotPassword;
+    private TextView register;
     private EditText edEmail, edPassword;
 
     // The login button and the FirebaseAuth variables are also initialised and declared here
