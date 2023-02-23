@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -43,13 +44,19 @@ import java.util.Date;
  */
 public class AddContact extends AppCompatActivity {
 
+    // A Database Reference is used to help save a contact entry into the user table
     DatabaseReference databaseReference;
 
+    // This will produce a list of saved contact entries
     RecyclerView recyclerView;
 
+    // An ArrayList object will be made from the instantiable class
     ArrayList<ContactItem> contactItemArrayList;
+
+    // This is used to update the Contact list when an entry is either updated or deleted
     ContactRecyclerAdapter adapter;
 
+    // The buttons will be initialised and declared here
     Button addCon, homeBtn, emailBtn, smsBtn;
 
     @Override
@@ -57,48 +64,63 @@ public class AddContact extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contact);
 
+        // The Firebase Database object is declared in here as is the RecyclerView
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
         recyclerView = findViewById(R.id.reView);
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        // The ArrayList object is also declared in here
         contactItemArrayList = new ArrayList<>();
 
+        // If the user clicks the Home button, they will leave the AddContact page to go back to the Home page
         homeBtn = findViewById(R.id.homeBtn);
         homeBtn.setOnClickListener(v -> startActivity(new Intent(AddContact.this, MainActivity.class)));
 
+        // If the user clicks the Email button, they will leave the AddContact page to go the Email Maker page
         emailBtn = findViewById(R.id.emailBtn);
         emailBtn.setOnClickListener(v -> startActivity(new Intent(AddContact.this, EmailMaker.class)));
 
+        // If the user clicks the Text Message button, they will leave the AddContact page to go the Text Maker page
         smsBtn = findViewById(R.id.textBtn);
         smsBtn.setOnClickListener(v -> startActivity(new Intent(AddContact.this, TextMaker.class)));
 
+        // The AddContact Button will be used to help add a new Contact entry into the Contact List
         addCon = findViewById(R.id.addBtn);
         addCon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // The object of this method is used to trigger the actual method to save a contact entry
                 ViewDialogAddContact viewDialogAddContact = new ViewDialogAddContact();
                 viewDialogAddContact.ShowDialog(AddContact.this);
             }
         });
-        
+
+        // If the contact list has had some entries saved, this method will check and display them to the user
         displayContacts();
 
         
     }
 
     private void displayContacts() {
+        // Here, the Database object will cycle through the Contact table and use an ID to help sort out the saved entries to display them in the list
         databaseReference.child("CONTACTS").orderByChild("cID").addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // The ArrayList object is needed to get the table entries
                 contactItemArrayList.clear();
 
+                // A DataSnapshot will take an instance that contains data and is granted access
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+
+                    // A 2nd ArrayList object is used to grab the data instance from the instantiable class and add them to the list
                     ContactItem contactItem = dataSnapshot.getValue(ContactItem.class);
                     contactItemArrayList.add(contactItem);
                 }
 
+                // The Adapter will then be set to the Recycler View and will update the Contact List whether or not data is updated, added or removed
                 adapter = new ContactRecyclerAdapter(AddContact.this, contactItemArrayList);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
@@ -114,6 +136,8 @@ public class AddContact extends AppCompatActivity {
 
     public class ViewDialogAddContact{
         public void ShowDialog(Context context){
+
+            // The Dialog object helps for adding a new contact to the RecyclerView List
             final Dialog dia = new Dialog(context);
 
             dia.requestWindowFeature(Window.FEATURE_NO_TITLE);

@@ -1,7 +1,7 @@
 package com.example.medsupapp;
 
 /*
- *  Class name: AddContact.java
+ *  Class name: ContactRecyclerAdapter.java
  *
  *  Version: Revision 1
  *
@@ -13,7 +13,7 @@ package com.example.medsupapp;
 
 /*
  *
- * @reference:  https://www.youtube.com/watch?v=1Ifc2g6Hv8k&t=2055s/AddContact.java
+ * @reference:  https://www.youtube.com/watch?v=1Ifc2g6Hv8k&t=2055s/ContactRecyclerAdapter.java
  *
  */
 
@@ -40,10 +40,13 @@ import java.util.ArrayList;
 
 public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecyclerAdapter.ViewHolder> {
 
+    // A Context object is needed for the removal and editing of a contact entry
     Context context;
 
+    // The instantiable class is declared as an ArrayList
     ArrayList<ContactItem> contactItemArrayList;
 
+    // The Database Reference will be used to call in the Realtime Database table for various operations
     DatabaseReference databaseReference;
 
     public ContactRecyclerAdapter(Context context, ArrayList<ContactItem> contactItemArrayList) {
@@ -57,6 +60,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
 
+        // The XML file will be set to the LayoutInflater object and later encrypted into the View object
         View view = layoutInflater.inflate(R.layout.contact_item, parent, false);
 
         return new ViewHolder(view);
@@ -64,7 +68,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
 
     @Override
     public void onBindViewHolder(@NonNull ContactRecyclerAdapter.ViewHolder holder, int position) {
-        // Here, the instantiable class (Contacts) is declared into the ArrayList object while this method updates the ViewHolder content
+        // Here, the instantiable class (ContactItem) is declared into the ArrayList object while this method updates the ViewHolder content
         ContactItem contactItem = contactItemArrayList.get(position);
 
         // The holder will be where the contact information is updated
@@ -192,6 +196,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
         }
     }
 
+    // The Item count is set to the size of the ArrayList
     @Override
     public int getItemCount() {
         return contactItemArrayList.size();

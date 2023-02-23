@@ -41,8 +41,13 @@ import java.util.ArrayList;
 
 public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecyclerAdapter.ViewHolder> {
 
+    // A Context object is needed for the removal and editing of a diagnosis entry
     Context context;
+
+    // The instantiable class is declared as an ArrayList
     ArrayList<DiagnosisItem> diagnosisItemArrayList;
+
+    // The Database Reference will be used to call in the Realtime Database table for various operations
     DatabaseReference databaseReference;
 
     public DiagnosisRecyclerAdapter(Context context, ArrayList<DiagnosisItem> diagnosisItemArrayList) {
@@ -54,6 +59,7 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
     @NonNull
     @Override
     public DiagnosisRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // The XML file will be set to the LayoutInflater object and later encrypted into the View object
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.health_item, parent, false);
 
@@ -62,10 +68,13 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
 
     @Override
     public void onBindViewHolder(@NonNull DiagnosisRecyclerAdapter.ViewHolder holder, int position) {
+        // Here, the instantiable class (DiagnosisItem) is declared into the ArrayList object while this method updates the ViewHolder content
         DiagnosisItem diagnosisItem = diagnosisItemArrayList.get(position);
 
+        // The holder will be where the diagnosis information is updated
         holder.healthTerm.setText("Diagnosis: "+diagnosisItem.getTerm());
 
+        // In these two button methods, the ViewDialog aspects will take the following contexts and Diagnosis variables to make the methods work properly
         holder.updateTerm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +93,7 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
 
     }
 
+    // The Item count is set to the size of the ArrayList
     @Override
     public int getItemCount() {
         return diagnosisItemArrayList.size();
@@ -91,6 +101,7 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
+        // The TextViews and buttons for the diagnosis field and the aforementioned buttons are declared and initialised here
         TextView healthTerm;
 
         Button removeTerm, updateTerm;
@@ -104,12 +115,15 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
     }
 
     public class ViewDialogEditTerm{
+        // This method will be used for when the user wants to change a saved diagnosis
         public void showDialog(Context context, String hID, String term){
+            // Like in the Contact file, a dialogue object will be set to the required functionality (in this case, updating an existing diagnosis)
             final Dialog d = new Dialog(context);
             d.requestWindowFeature(Window.FEATURE_NO_TITLE);
             d.setCancelable(false);
             d.setContentView(R.layout.alert_dialog_add_new_health);
 
+            // The variables are set and declared here along with the buttons
             EditText diagnosisName = d.findViewById(R.id.healthName);
             Button updateDiag = d.findViewById(R.id.addHeal);
             Button exitBtn = d.findViewById(R.id.cancelAction);
@@ -118,6 +132,7 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
 
             updateDiag.setText("ADD DIAGNOSIS");
 
+            // If a user wants to leave, then dialogue window will be dismissed
             exitBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -125,19 +140,23 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
                 }
             });
 
+            // If a user wants to update a saved diagnosis, this method will be activated
             updateDiag.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // This will get the variables to allow for edits to be made
                     String alteredTerm = diagnosisName.getText().toString();
 
                     if(alteredTerm.isEmpty()){
                         Toast.makeText(context, "No blank spaces", Toast.LENGTH_SHORT).show();
                     }
                     else{
+                        // Or if any edits weren't made, this message will show
                         if(alteredTerm.equals(term)){
                             Toast.makeText(context, "No edits made", Toast.LENGTH_SHORT).show();
                         }
                         else{
+                            // Otherwise, any changes made will be made to the database entry
                             databaseReference.child("CONDITIONS").child(hID).setValue(new DiagnosisItem(hID, term));
                             Toast.makeText(context, "Entry edits confirmed!", Toast.LENGTH_SHORT).show();
                             d.dismiss();
@@ -152,13 +171,18 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
     public class ViewDialogTermDelete{
         public void showDialog(Context context, String hID){
             final Dialog dialogs = new Dialog(context);
+            // Like in the Contact file, a dialogue object will be set to the required functionality (in this case, updating an existing contact)
             dialogs.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialogs.setCancelable(false);
+
+            // This is used to activate the delete query when the delete button is clicked
             dialogs.setContentView(R.layout.view_dialog_remove_health);
 
+            // Unlike the update method, only the buttons are initialised here
             Button removeTerm = dialogs.findViewById(R.id.delBtn);
             Button leaveBtn = dialogs.findViewById(R.id.cancelBtn);
 
+            // If the users wants to exit, then the dialogue will be dismissed
             leaveBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -166,6 +190,7 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
                 }
             });
 
+            // Here, the method will find the id for a saved diagnosis to remove the diagnosis entry, which is then notified to the user as seen here
             removeTerm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
