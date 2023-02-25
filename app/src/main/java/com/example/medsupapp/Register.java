@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.android.gms.tasks.OnCompleteListener;
 
+import org.w3c.dom.Text;
+
 /*
  *  Class name: Reg.java
  *
@@ -43,7 +45,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private FirebaseAuth auth;
 
     // The Buttons here are declared
-    private TextView banner, regUser, logInSwap;
+    private TextView banner, regUser, logInSwap, skipBtn;
 
     // The text fields that save a user account are initialised
     private EditText edName, edAge, edSex, edEmail, edPassword;
@@ -62,6 +64,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         regUser = (Button)findViewById(R.id.regBtn);
         regUser.setOnClickListener((View.OnClickListener) this);
 
+        skipBtn = (TextView)findViewById(R.id.optionalNavi);
+        skipBtn.setOnClickListener((View.OnClickListener) this);
+
         logInSwap = (TextView) findViewById(R.id.logInRedirection);
         logInSwap.setOnClickListener((View.OnClickListener) this);
 
@@ -76,9 +81,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.titleDesc:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
                 // If the user clicks the registration button, then this method will be triggered
             case R.id.regBtn:
                 registerUser();
@@ -86,6 +88,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             // If the user clicks the login redirection button, then this will bring the user to the login page if they have an account saved beforehand
             case R.id.logInRedirection:
                 startActivity(new Intent(this, Login.class));
+                break;
+            case R.id.optionalNavi:
+                startActivity(new Intent(this, MainActivity.class));
                 break;
         }
     }

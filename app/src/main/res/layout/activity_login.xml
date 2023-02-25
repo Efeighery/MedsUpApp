@@ -70,18 +70,18 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
-            <!--
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/forgotPW"
-                android:text="Forgot your password? Click here"
+                android:id="@+id/optionalNavi"
+                android:text="Do you wish to skip this step?"
                 android:layout_gravity="center"
                 android:padding="8dp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
-                -->
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
