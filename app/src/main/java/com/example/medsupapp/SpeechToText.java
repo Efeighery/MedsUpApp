@@ -83,6 +83,11 @@ public class SpeechToText extends AppCompatActivity {
         });
 
 
+        /*
+         *
+         * @reference:  https://www.youtube.com/watch?v=ctywlOxBCX4/SpeakAudio.java
+         *
+         */
         copyTextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
