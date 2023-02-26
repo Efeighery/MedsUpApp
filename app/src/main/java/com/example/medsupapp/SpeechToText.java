@@ -3,10 +3,14 @@ package com.example.medsupapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -41,6 +45,8 @@ public class SpeechToText extends AppCompatActivity {
     EditText textBox;
     ImageView microphoneBtn;
 
+    Button copyTextBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +54,7 @@ public class SpeechToText extends AppCompatActivity {
 
         textBox = findViewById(R.id.textArea);
         microphoneBtn = findViewById(R.id.micView);
+        copyTextBtn = findViewById(R.id.copyBtn);
 
         // This is where the recogniser function will work
         microphoneBtn.setOnClickListener(v -> {
@@ -73,6 +80,19 @@ public class SpeechToText extends AppCompatActivity {
                 Toast.makeText(this, "Exception -> "+exe.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
 
+        });
+
+
+        copyTextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipBoard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Text", textBox.getText().toString());
+
+                clipBoard.setPrimaryClip(clip);
+
+                Toast.makeText(SpeechToText.this, "Copied text to the clipboard", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 

@@ -19,13 +19,23 @@
         />
 
     <ImageView
+        android:id="@+id/micView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/micView"
-        android:src="@drawable/ic_mic_button_foreground"
         android:layout_below="@id/textArea"
+        android:layout_marginTop="11dp"
         android:padding="40dp"
-        android:layout_centerHorizontal="true"
-        />
+        android:src="@drawable/ic_mic_button_foreground" />
+
+    <Button
+        android:id="@+id/copyBtn"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="550dp"
+        android:backgroundTint="#509E53"
+        android:padding="20dp"
+        android:text="Copy to Clipboard"
+        android:textSize="16dp" />
 
 </RelativeLayout>
