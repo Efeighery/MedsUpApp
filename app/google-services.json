@@ -1,34 +1,71 @@
 {
   "project_info": {
-    "project_number": "554532193631",
-    "firebase_url": "https://computingproject-9a130-default-rtdb.firebaseio.com",
-    "project_id": "computingproject-9a130",
-    "storage_bucket": "computingproject-9a130.appspot.com"
+    "project_number": "164553347862",
+    "firebase_url": "https://medsup-reminder-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "medsup-reminder",
+    "storage_bucket": "medsup-reminder.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:554532193631:android:bfa06c240b943437c822ea",
+        "mobilesdk_app_id": "1:164553347862:android:31c87e0d21f5972f20f637",
         "android_client_info": {
           "package_name": "com.example.medsupapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "554532193631-8f5engdgud7ugl4n7chege1ffbbnsusn.apps.googleusercontent.com",
+          "client_id": "164553347862-3hpohhdvrvch7uqathi8580t65sspk1j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medsupapp",
+            "certificate_hash": "c5a0daa03001798ba8477ea71073b1f07437bd64"
+          }
+        },
+        {
+          "client_id": "164553347862-84ruv4dm9oedfrs97n1geofidjps8edp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDdzdjjvMCYhkPyj1DNSReww5hzLz2dN0w"
+          "current_key": "AIzaSyB-2PZ5mxwWzZ9-VMp9yw-ykBcMs8m5crc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "554532193631-8f5engdgud7ugl4n7chege1ffbbnsusn.apps.googleusercontent.com",
+              "client_id": "164553347862-84ruv4dm9oedfrs97n1geofidjps8edp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164553347862:android:b231e04abf4f922020f637",
+        "android_client_info": {
+          "package_name": "com.example.profiletest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164553347862-84ruv4dm9oedfrs97n1geofidjps8edp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-2PZ5mxwWzZ9-VMp9yw-ykBcMs8m5crc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164553347862-84ruv4dm9oedfrs97n1geofidjps8edp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
