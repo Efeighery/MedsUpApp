@@ -118,9 +118,27 @@
         android:layout_below="@+id/greeting"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="577dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="545dp"
         android:backgroundTint="#979797"
         android:text="View profile"
         android:textSize="20dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_email_foreground"
+        android:layout_below="@+id/profileBtn"
+        android:layout_marginLeft="100dp"
+        android:id="@+id/emailBox"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_text_foreground"
+        android:layout_below="@+id/profileBtn"
+        android:layout_marginLeft="200dp"
+        android:id="@+id/smsBtn"
+        />
 </RelativeLayout>
