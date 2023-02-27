@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     // The function buttons are declared and initialised as well for logging out
     Button medicationBtn, recorderBtn, calBtn, conBtn, conditionBtn, userProBtn;
 
+    // The ImageView files are used to navigate to the email/text message maker pages from the home menu
     ImageView textMsg, emailMak;
 
     @Override
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // The buttons are found with their respective IDs and initialised
         recorderBtn = findViewById(R.id.recBtn);
         medicationBtn = findViewById(R.id.medicSaveBtn);
         calBtn = findViewById(R.id.calendarBtn);
@@ -32,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
         textMsg = findViewById(R.id.smsBtn);
         emailMak = findViewById(R.id.emailBox);
 
+        // Whenever any of these buttons are clicked, the page will be changed to the corresponding one
         textMsg.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, TextMaker.class)));
 
         emailMak.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, EmailMaker.class)));
 
-        // Whenever any of these buttons are clicked, the page will be changed to the corresponding one
         recorderBtn.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SpeechToText.class));
         });
@@ -44,11 +46,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, SpeechToText.class));
         });
 
-
         conBtn.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, AddContact.class));
         });
-
 
         calBtn.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, AddReminder.class));
@@ -62,7 +62,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Profile.class));
             }
         });
-
-
     }
 }
