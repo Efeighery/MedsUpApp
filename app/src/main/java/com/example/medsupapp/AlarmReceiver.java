@@ -1,5 +1,6 @@
 package com.example.medsupapp;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -18,18 +19,15 @@ import androidx.core.app.NotificationCompat;
  */
 
 /*
- * @reference: https://www.youtube.com/watch?v=F3IFF8A-ewE&t=2s
+ * @reference: https://www.youtube.com/watch?v=44Nr3AT7fF4&t=306s
  */
 
 public class AlarmReceiver extends BroadcastReceiver {
 
-    // A channel ID is used to
-    private static final String CHANNEL_ID = "SAMPLE_CHANNEL";
-
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // Gets the id and reminder message from the Intent object
+        ;// Gets the id and reminder message from the Intent object
         int notifID = intent.getIntExtra("notifID", 0);
 
         String note = intent.getStringExtra("note");
@@ -45,25 +43,17 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationManager notificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            // Applies to phone APIs 26+
-            CharSequence channel_name = "Important Notification";
-            int significance = NotificationManager.IMPORTANCE_DEFAULT;
-
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, channel_name, significance);
-
-            notificationManager.createNotificationChannel(channel);
-        }
-
-        // This section of the code will build the notification that will be displayed to the user when the alarm is triggered at its defined time
-        NotificationCompat.Builder build = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(android.R.drawable.ic_dialog_info)
-                .setContentTitle("Medication Reminder")
+        // Sets up the notification to be displayed and the credentials like the message, the time it's set to trigger, etc.
+        Notification.Builder builder = new Notification.Builder(context);
+        builder.setSmallIcon(android.R.drawable.ic_dialog_info).setContentTitle("Heads Up")
+                .setContentText(note)
+                .setWhen(System.currentTimeMillis())
+                .setAutoCancel(true)
                 .setContentIntent(contentIn)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setAutoCancel(true);
+                .setPriority(Notification.PRIORITY_MAX)
+                .setDefaults(Notification.DEFAULT_ALL);
 
-        // And the reminder will trigger based on the designated time the user set it to
-        notificationManager.notify(notifID, build.build());
+        // This will notify the user
+        notificationManager.notify(notifID, builder.build());
     }
 }

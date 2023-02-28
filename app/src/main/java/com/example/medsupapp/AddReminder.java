@@ -21,17 +21,12 @@ import android.widget.Button;
 
 public class AddReminder extends AppCompatActivity {
 
-    Button notiMakeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reminder);
 
-        notiMakeBtn = findViewById(R.id.notificationBtn);
-
-        // The button that can take a user to the Notification Maker Page is initialised and declared with an Intent object
-        notiMakeBtn.setOnClickListener(v -> startActivity(new Intent(AddReminder.this, NotificationCreator.class)));
     }
 
     // This is used to direct users to their Google AddReminder, where they can take their copied medication texts into the reminder name entry

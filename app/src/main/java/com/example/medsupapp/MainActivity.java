@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     // The function buttons are declared and initialised as well for logging out
     Button medicationBtn, recorderBtn, calBtn, conBtn, conditionBtn, userProBtn;
+    ImageView notiMakeBtn;
 
     // The ImageView files are used to navigate to the email/text message maker pages from the home menu
     ImageView textMsg, emailMak;
@@ -33,17 +34,21 @@ public class MainActivity extends AppCompatActivity {
 
         textMsg = findViewById(R.id.smsBtn);
         emailMak = findViewById(R.id.emailBox);
+        notiMakeBtn = findViewById(R.id.notificationBtn);
 
         // Whenever any of these buttons are clicked, the page will be changed to the corresponding one
         textMsg.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, TextMaker.class)));
 
         emailMak.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, EmailMaker.class)));
 
+        // The button that can take a user to the Notification Maker Page is initialised and declared with an Intent object
+        notiMakeBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, NotificationCreator.class)));
+
         recorderBtn.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SpeechToText.class));
         });
         medicationBtn.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, SpeechToText.class));
+            startActivity(new Intent(MainActivity.this, AddMedication.class));
         });
 
         conBtn.setOnClickListener(v -> {
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, AddReminder.class));
         });
         conditionBtn.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, SpeechToText.class));
+            startActivity(new Intent(MainActivity.this, AddDiagnosis.class));
         });
         userProBtn.setOnClickListener(new View.OnClickListener() {
             @Override

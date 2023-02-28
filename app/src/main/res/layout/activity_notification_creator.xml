@@ -8,32 +8,41 @@
     android:gravity="center" android:padding="10dp"
     tools:context=".NotificationCreator">
 
-    <EditText android:layout_width="match_parent"
-        android:layout_height="48dp" android:hint="Reminder"
-        android:id="@+id/reminderField"/>
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Reminder"
+        />
 
-    <TimePicker android:id="@+id/timePick"
-        android:layout_marginTop="20dp"
+    <TimePicker
+        android:id="@+id/timePick"
         android:layout_width="310dp"
         android:layout_height="360dp"/>
 
-    <LinearLayout android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        >
 
-        <Button android:id="@+id/confirmBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="Finish" android:textAllCaps="false"/>
-
-        <Button android:id="@+id/exitBtn"
+        <Button
+            android:id="@+id/saveBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel" android:textAllCaps="false"/>
+            android:text="Confirm"
+            android:layout_marginRight="20dp"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textAllCaps="false"/>
+
     </LinearLayout>
 
-    <Button android:id="@+id/homeBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home" android:textAllCaps="false"/>
+
 </LinearLayout>

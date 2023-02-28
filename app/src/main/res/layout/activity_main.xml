@@ -129,7 +129,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_email_foreground"
         android:layout_below="@+id/profileBtn"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="50dp"
         android:id="@+id/emailBox"
         />
 
@@ -138,7 +138,16 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_text_foreground"
         android:layout_below="@+id/profileBtn"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="150dp"
         android:id="@+id/smsBtn"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_timer_foreground"
+        android:layout_below="@+id/profileBtn"
+        android:layout_marginLeft="250dp"
+        android:id="@+id/notificationBtn"
         />
 </RelativeLayout>
