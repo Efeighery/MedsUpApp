@@ -3,6 +3,7 @@ package com.example.medsupapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ import android.widget.Toast;
 public class TextMaker extends AppCompatActivity {
 
     private EditText medNumber, medMessage;
-    private Button sendMessage;
+    private Button sendMessage, home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,34 +43,24 @@ public class TextMaker extends AppCompatActivity {
         medNumber = findViewById(R.id.phoneNo);
         medMessage = findViewById(R.id.textMsg);
         sendMessage = findViewById(R.id.sendTextBtn);
+        home = findViewById(R.id.returnConBtn);
 
         sendMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-                    if(checkSelfPermission(android.Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
-                        sendSMS();
-                    }
-                    else{
-                        requestPermissions(new String[]{Manifest.permission.SEND_SMS}, 1);
-                    }
+                try{
+                    SmsManager sms = SmsManager.getDefault();
+
+                    sms.sendTextMessage(medNumber.getText().toString(), null, medMessage.getText().toString(), null, null);
+                    Toast.makeText(TextMaker.this, "Message was sent", Toast.LENGTH_LONG).show();
+                }
+                catch(Exception exce){
+                    Toast.makeText(TextMaker.this, "Couldn't send message. Better try again", Toast.LENGTH_LONG).show();
                 }
             }
         });
+
+        home.setOnClickListener(v -> startActivity(new Intent(TextMaker.this, MainActivity.class)));
     }
 
-    private void sendSMS(){
-        String phoneNum = medNumber.getText().toString();
-        String SMSMessage = medMessage.getText().toString();
-
-        try{
-            SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(phoneNum, null, SMSMessage, null, null);
-            Toast.makeText(this, "Message delivered", Toast.LENGTH_SHORT).show();
-        }
-        catch(Exception ex){
-            ex.printStackTrace();
-            Toast.makeText(this, "Couldn't send your message", Toast.LENGTH_SHORT).show();
-        }
-    }
 }

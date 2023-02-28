@@ -76,12 +76,12 @@
         />
 
     <Button
-        android:id="@+id/listBtn"
+        android:id="@+id/hoBtn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="5dp"
         android:backgroundTint="#107FD6"
-        android:text="Return to Contact"
+        android:text="Return to HomePage"
         android:textSize="21sp" />
 
 

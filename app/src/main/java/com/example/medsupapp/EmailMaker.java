@@ -40,6 +40,8 @@ public class EmailMaker extends AppCompatActivity {
         emailMessage = findViewById(R.id.emailContent);
         sendBtn = findViewById(R.id.sendEmailBtn);
 
+        returnBtn = findViewById(R.id.hoBtn);
+
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,5 +60,7 @@ public class EmailMaker extends AppCompatActivity {
                 startActivity(Intent.createChooser(itt, "Select an email address"));
             }
         });
+
+        returnBtn.setOnClickListener(v -> startActivity(new Intent(EmailMaker.this, MainActivity.class)));
     }
 }
