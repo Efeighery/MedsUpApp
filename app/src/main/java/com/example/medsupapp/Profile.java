@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 /*
  *  Class name: Profile.java
  *
@@ -77,6 +79,7 @@ public class Profile extends AppCompatActivity {
         final TextView greetings = (TextView) findViewById(R.id.message);
         final TextView fullnameV = (TextView) findViewById(R.id.fullName);
         final TextView emailV = (TextView) findViewById(R.id.emailAddress);
+        final TextView passwordV = (TextView) findViewById(R.id.userPassword);
         final TextView ageV = (TextView) findViewById(R.id.age);
         final TextView genderV = (TextView) findViewById(R.id.gender);
 
@@ -93,6 +96,7 @@ public class Profile extends AppCompatActivity {
                     String email = userPro.email;
                     String age = userPro.age;
                     String gender = userPro.sex;
+                    String pwd = userPro.password;
 
                     // Then the TextViews will be filled to contain the profile credentials and display them to the user
                     greetings.setText("Welcome " + fullName + "!");
@@ -100,6 +104,7 @@ public class Profile extends AppCompatActivity {
                     emailV.setText(email);
                     ageV.setText(age);
                     genderV.setText(gender);
+                    passwordV.setText(pwd);
                 }
             }
 

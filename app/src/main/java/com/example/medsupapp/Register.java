@@ -152,7 +152,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 // The task succeeds then this statement will run
                 if(task.isSuccessful()){
                     // The User class will be turned into an object that contains the variables for saving user account
-                    User user = new User(name, age, sex, email);
+                    User user = new User(name, age, sex, email, password);
 
                     // The Database Instance will be called to the Users table and gets the current User's id and sets the User Object to add it to the table
                     FirebaseDatabase.getInstance().getReference("Users")

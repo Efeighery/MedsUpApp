@@ -66,6 +66,15 @@
                 android:hint="Email"
                 android:textSize="20dp"
                 android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/userPassword"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Password"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
 
             <Button
                 android:layout_width="match_parent"
