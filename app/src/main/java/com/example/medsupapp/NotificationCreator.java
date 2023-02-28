@@ -21,7 +21,7 @@ import java.util.Calendar;
  */
 
 /*
- * @reference: https://www.youtube.com/watch?v=44Nr3AT7fF4&t=306s
+ * @reference: https://www.youtube.com/watch?v=F3IFF8A-ewE&t=0s/NotificationCreator.java
  */
 
 public class NotificationCreator extends AppCompatActivity implements View.OnClickListener{
@@ -35,8 +35,8 @@ public class NotificationCreator extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_notification_creator);
 
         // This is for the switch cases involving the leaving or saving a notification
-        findViewById(R.id.saveBtn).setOnClickListener((View.OnClickListener) this);
-        findViewById(R.id.cancelBtn).setOnClickListener((View.OnClickListener) this);
+        findViewById(R.id.saveBtn).setOnClickListener(this);
+        findViewById(R.id.cancelBtn).setOnClickListener(this);
     }
 
     // This is the main method that's used to help create a timed reminder

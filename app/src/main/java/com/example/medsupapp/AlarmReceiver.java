@@ -19,10 +19,12 @@ import androidx.core.app.NotificationCompat;
  */
 
 /*
- * @reference: https://www.youtube.com/watch?v=44Nr3AT7fF4&t=306s
+ * @reference: https://www.youtube.com/watch?v=F3IFF8A-ewE&t=0s/AlarmReceiver.java
  */
 
 public class AlarmReceiver extends BroadcastReceiver {
+
+    private static final String CHANNELID = "SAMPLE_CHANNEL";
 
 
     @Override
@@ -44,16 +46,24 @@ public class AlarmReceiver extends BroadcastReceiver {
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         // Sets up the notification to be displayed and the credentials like the message, the time it's set to trigger, etc.
-        Notification.Builder builder = new Notification.Builder(context);
-        builder.setSmallIcon(android.R.drawable.ic_dialog_info).setContentTitle("Heads Up")
-                .setContentText(note)
-                .setWhen(System.currentTimeMillis())
-                .setAutoCancel(true)
-                .setContentIntent(contentIn)
-                .setPriority(Notification.PRIORITY_MAX)
-                .setDefaults(Notification.DEFAULT_ALL);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            // For APIs that are 26 or higher
+            CharSequence channel = "MedsUp Notification";
+            int crucial = NotificationManager.IMPORTANCE_DEFAULT;
 
-        // This will notify the user
+            NotificationChannel channel1 = new NotificationChannel(CHANNELID, channel, crucial);
+            notificationManager.createNotificationChannel(channel1);
+
+        }
+
+        // This will let the notification be made and shown to the user
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNELID).setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setContentTitle("Title")
+                .setContentText(note)
+                .setContentIntent(contentIn)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+
         notificationManager.notify(notifID, builder.build());
     }
 }
