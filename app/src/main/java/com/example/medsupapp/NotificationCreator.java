@@ -2,6 +2,7 @@ package com.example.medsupapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -54,7 +55,7 @@ public class NotificationCreator extends AppCompatActivity implements View.OnCli
         intent.putExtra("message", text.getText().toString());
 
         // A PendingIntent object is used to get a Broadcast method needed to check if it exists, if it does the it'll be cancelled to make way for the new one
-        PendingIntent alarmInt = PendingIntent.getBroadcast(
+        @SuppressLint("UnspecifiedImmutableFlag") PendingIntent alarmInt = PendingIntent.getBroadcast(
                 NotificationCreator.this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT
         );
 
