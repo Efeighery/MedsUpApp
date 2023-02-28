@@ -1,5 +1,7 @@
 package com.example.medsupapp;
 
+import static android.app.PendingIntent.*;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -55,8 +57,8 @@ public class NotificationCreator extends AppCompatActivity implements View.OnCli
         intent.putExtra("message", text.getText().toString());
 
         // A PendingIntent object is used to get a Broadcast method needed to check if it exists, if it does the it'll be cancelled to make way for the new one
-        PendingIntent alarmInt = PendingIntent.getBroadcast(
-                NotificationCreator.this, 0, intent, PendingIntent.FLAG_IMMUTABLE
+        PendingIntent alarmInt = getBroadcast(
+                NotificationCreator.this, 0, intent, FLAG_IMMUTABLE
         );
 
         // An AlarmManager is used to help trigger the system's alarm at an assigned time
