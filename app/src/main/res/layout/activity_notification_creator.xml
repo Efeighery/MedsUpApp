@@ -8,16 +8,9 @@
     android:gravity="center" android:padding="10dp"
     tools:context=".NotificationCreator">
 
-    <EditText
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Reminder"
-        />
-
     <TimePicker
         android:id="@+id/timePick"
-        android:layout_width="310dp"
+        android:layout_width="360dp"
         android:layout_height="360dp"/>
 
     <LinearLayout
@@ -27,20 +20,15 @@
         android:layout_marginTop="30dp"
         >
 
-        <Button
-            android:id="@+id/saveBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirm"
+        <ToggleButton
+            android:id="@+id/collapseBtn"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:checked="false"
+            android:onClick="OnToggleClicked"
             android:layout_marginRight="20dp"
-            android:textAllCaps="false"/>
+            />
 
-        <Button
-            android:id="@+id/cancelBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cancel"
-            android:textAllCaps="false"/>
 
     </LinearLayout>
 

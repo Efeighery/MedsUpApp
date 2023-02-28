@@ -7,8 +7,14 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Build;
+import android.os.Vibrator;
+import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 /*
@@ -19,51 +25,36 @@ import androidx.core.app.NotificationCompat;
  */
 
 /*
- * @reference: https://www.youtube.com/watch?v=F3IFF8A-ewE&t=0s/AlarmReceiver.java
+ * @reference: https://www.geeksforgeeks.org/how-to-build-a-simple-alarm-setter-app-in-android//AlarmReceiver.java
  */
 
 public class AlarmReceiver extends BroadcastReceiver {
-
-    private static final String CHANNELID = "SAMPLE_CHANNEL";
-
-
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void onReceive(Context context, Intent intent) {
-        ;// Gets the id and reminder message from the Intent object
-        int notifID = intent.getIntExtra("notifID", 0);
+        // Sets the method needed to trigger the alarm
 
-        String note = intent.getStringExtra("note");
+        // The Vibrator object functions similar to an Alarm set on a phone
+        Vibrator vibration  = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
 
+        // Here, milliseconds are used to set how long the alarm will last; in this case, 5 seconds
+        vibration.vibrate(5000);
 
-        // Calls the NotificationCreator class when the reminder is tapped
-        Intent makerInt = new Intent(context, NotificationCreator.class);
-        PendingIntent contentIn = PendingIntent.getActivity(
-                context, 0, makerInt, 0
-        );
+        // A notification is used to help make the notification more visible to the user
+        Toast.makeText(context, "Don't forget to take your medication", Toast.LENGTH_LONG).show();
 
-        // The Notification Manager object is used help create a channel needed to save the newly-made notification
-        NotificationManager notificationManager =
-                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        // A Uri is used to access the RingtoneManager to help set an alarm when set by the user
+        Uri alURI = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
 
-        // Sets up the notification to be displayed and the credentials like the message, the time it's set to trigger, etc.
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            // For APIs that are 26 or higher
-            CharSequence channel = "MedsUp Notification";
-            int crucial = NotificationManager.IMPORTANCE_DEFAULT;
-
-            NotificationChannel channel1 = new NotificationChannel(CHANNELID, channel, crucial);
-            notificationManager.createNotificationChannel(channel1);
-
+        // If the Uri object is empty, then a ringtone will be added into it
+        if(alURI == null){
+            alURI = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         }
 
-        // This will let the notification be made and shown to the user
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNELID).setSmallIcon(android.R.drawable.ic_dialog_info)
-                .setContentTitle("Title")
-                .setContentText(note)
-                .setContentIntent(contentIn)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setAutoCancel(true);
+        // Sets the default ringtone sound into place
+        Ringtone ring = RingtoneManager.getRingtone(context, alURI);
 
-        notificationManager.notify(notifID, builder.build());
+        // Activates the ringtone when triggered
+        ring.play();
     }
 }
