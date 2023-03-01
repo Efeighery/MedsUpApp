@@ -18,6 +18,9 @@
         android:theme="@style/Theme.MedsUpApp"
         tools:targetApi="31">
         <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".AddMedication"
             android:exported="false" />
         <activity
@@ -63,7 +66,7 @@
             android:name=".MainActivity"
             android:exported="false" />
 
-        <receiver android:name=".AlarmReceiver"/>
+        <receiver android:name=".AlarmReceiver" />
     </application>
 
 </manifest>
