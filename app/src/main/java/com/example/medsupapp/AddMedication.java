@@ -82,12 +82,9 @@ public class AddMedication extends AppCompatActivity {
         addMeds = findViewById(R.id.addMedBtn);
         homeBtn = findViewById(R.id.homeBtn);
 
-        homeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddMedication.this, MainActivity.class);
-                startActivity(intent);
-            }
+        homeBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(AddMedication.this, MainActivity.class);
+            startActivity(intent);
         });
 
         // The AddMedication Button will be used to help add a new Diagnosis entry into the Diagnosis List

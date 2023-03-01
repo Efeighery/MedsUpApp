@@ -57,7 +57,7 @@ public class AddContact extends AppCompatActivity {
     ContactRecyclerAdapter adapter;
 
     // The buttons will be initialised and declared here
-    Button addCon, homeBtn, emailBtn, smsBtn;
+    Button addCon, homeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,14 +77,6 @@ public class AddContact extends AppCompatActivity {
         // If the user clicks the Home button, they will leave the AddContact page to go back to the Home page
         homeBtn = findViewById(R.id.homeBtn);
         homeBtn.setOnClickListener(v -> startActivity(new Intent(AddContact.this, MainActivity.class)));
-
-        // If the user clicks the Email button, they will leave the AddContact page to go the Email Maker page
-        emailBtn = findViewById(R.id.emailBtn);
-        emailBtn.setOnClickListener(v -> startActivity(new Intent(AddContact.this, EmailMaker.class)));
-
-        // If the user clicks the Text Message button, they will leave the AddContact page to go the Text Maker page
-        smsBtn = findViewById(R.id.textBtn);
-        smsBtn.setOnClickListener(v -> startActivity(new Intent(AddContact.this, TextMaker.class)));
 
         // The AddContact Button will be used to help add a new Contact entry into the Contact List
         addCon = findViewById(R.id.addBtn);

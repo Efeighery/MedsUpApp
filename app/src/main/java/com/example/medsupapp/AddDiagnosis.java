@@ -82,12 +82,9 @@ public class AddDiagnosis extends AppCompatActivity {
         // If the user clicks the Home button, they will leave the AddDiagnosis page to go back to the Home page
         homeBtn = findViewById(R.id.homeBtn);
 
-        homeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddDiagnosis.this, MainActivity.class);
-                startActivity(intent);
-            }
+        homeBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(AddDiagnosis.this, MainActivity.class);
+            startActivity(intent);
         });
 
         // The AddDiagnosis Button will be used to help add a new Diagnosis entry into the Diagnosis List
