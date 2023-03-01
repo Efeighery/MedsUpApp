@@ -44,6 +44,6 @@ public class NotificationHelper extends ContextWrapper {
         return new NotificationCompat.Builder(getApplicationContext(), channelID)
                 .setContentTitle("MedsUpApp Reminder")
                 .setContentText("Don't forget to take your medication.")
-                .setSmallIcon(R.drawable.ic_android_foreground);
+                .setSmallIcon(R.drawable.app_logo);
     }
 }
