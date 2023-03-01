@@ -146,7 +146,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
                         }
                         else{
                             // Otherwise, any changes made will be made to the database entry
-                            databaseReference.child("contact").child(cID).setValue(new ContactItem(cID, name, email, phone));
+                            databaseReference.child("CONTACTS").child(cID).setValue(new ContactItem(cID, name, email, phone));
                             Toast.makeText(context, "And the user is updated now", Toast.LENGTH_LONG).show();
                             dialog.dismiss();
                         }
