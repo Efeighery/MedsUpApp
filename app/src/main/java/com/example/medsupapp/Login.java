@@ -38,7 +38,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     // The visual variables from the XML file are initialised and declared
-    private TextView register, skipBtn;
+    private TextView register;
     private EditText edEmail, edPassword;
 
     // The login button and the FirebaseAuth variables are also initialised and declared here
@@ -54,8 +54,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         register = (TextView) findViewById(R.id.signupRedirectText);
         register.setOnClickListener(this);
 
-        skipBtn = (TextView) findViewById(R.id.optionalNavi);
-        skipBtn.setOnClickListener(this);
 
         logInBn = (Button) findViewById(R.id.login_button);
         logInBn.setOnClickListener(this);
@@ -82,11 +80,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.login_button:
                 userLogin();
                 break;
-
-            case R.id.optionalNavi:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
-
         }
     }
 

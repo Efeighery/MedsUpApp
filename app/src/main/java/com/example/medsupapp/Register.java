@@ -45,7 +45,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private FirebaseAuth auth;
 
     // The Buttons here are declared
-    private TextView banner, regUser, logInSwap, skipBtn;
+    private TextView banner, regUser, logInSwap;
 
     // The text fields that save a user account are initialised
     private EditText edName, edAge, edSex, edEmail, edPassword;
@@ -64,8 +64,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         regUser = (Button)findViewById(R.id.regBtn);
         regUser.setOnClickListener((View.OnClickListener) this);
 
-        skipBtn = (TextView)findViewById(R.id.optionalNavi);
-        skipBtn.setOnClickListener((View.OnClickListener) this);
 
         logInSwap = (TextView) findViewById(R.id.logInRedirection);
         logInSwap.setOnClickListener((View.OnClickListener) this);
@@ -88,9 +86,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             // If the user clicks the login redirection button, then this will bring the user to the login page if they have an account saved beforehand
             case R.id.logInRedirection:
                 startActivity(new Intent(this, Login.class));
-                break;
-            case R.id.optionalNavi:
-                startActivity(new Intent(this, MainActivity.class));
                 break;
         }
     }
