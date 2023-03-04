@@ -47,6 +47,7 @@ public class NotificationCreator extends AppCompatActivity implements TimePicker
         setAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // The TimePickerFragments page is used to help setting up notification times
                 DialogFragment timePickers = new TimePickerFragments();
                 timePickers.show(getSupportFragmentManager(), "time-picker");
             }
@@ -64,6 +65,7 @@ public class NotificationCreator extends AppCompatActivity implements TimePicker
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        // This allows the Calendar object to be set to the alarm's designated time
         Calendar c = Calendar.getInstance();
         c.set(Calendar.HOUR_OF_DAY, hourOfDay);
         c.set(Calendar.MINUTE, minute);
