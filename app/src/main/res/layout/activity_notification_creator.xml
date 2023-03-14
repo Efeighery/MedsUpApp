@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     tools:context=".NotificationCreator">
+
+    <!--This TextView will display a newly created alarm time when a user makes it-->
     <TextView
         android:id="@+id/txtW"
         android:layout_width="match_parent"
@@ -15,6 +17,8 @@
         android:layout_above="@id/timePicker"
         android:textSize="35dp"
         />
+
+    <!--Here, the user can choose a time for when an alarm so that they can take a tablet or pill for the day-->
         <Button
             android:id="@+id/timePicker"
             android:layout_width="wrap_content"
@@ -23,7 +27,7 @@
             android:layout_centerVertical="true"
             android:text="Activate Time Picker"
             />
-
+    <!--If a user doesn't want to set an alarm, they can cancel it by clicking this button-->
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

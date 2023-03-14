@@ -8,6 +8,7 @@
     android:padding="15dp"
     tools:context=".TextMaker">
 
+    <!--Much like the Email Maker page, the phone number and text message body needs to be filled in to send the message, otherwise a prompt will appear-->
     <EditText
         android:id="@+id/phoneNo"
         android:layout_width="match_parent"

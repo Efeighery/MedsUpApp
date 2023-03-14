@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context=".AddReminder">
 
+    <!--This explains what the page can be used for-->
     <TextView android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -21,6 +22,7 @@
         android:text="This page gives you two options for how to create a reminder for your medication."
         android:textSize="20dp"/>
 
+    <!--This allows users to paste the text found in the Speech-To-Text page and add it to a Google Calendar entry -->
     <TextView android:layout_width="377dp"
         android:layout_height="110dp"
         android:layout_alignParentStart="true" android:layout_alignParentTop="true"
@@ -36,12 +38,14 @@
         android:backgroundTint="#4CAF50" android:onClick="AddCalendarReminder"
         android:text="Add event to Google Calendar" android:textAllCaps="false"/>
 
+    <!--If a user wants to make a reminder with an alarm instead, they can click this button which allows them to do so-->
     <TextView android:layout_width="372dp"
         android:layout_height="85dp" android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" android:layout_marginBottom="268dp"
         android:text="Or if you like to create a notification for this at a certain time or date, click this button instead:"
         android:textSize="20dp"/>
 
+    <!--This will work similar to the Time Picker function found in the RealTime Bus App where users can adjust a chosen time with the hour and minute hands-->
     <Button
         android:id="@+id/notificationBtn"
         android:layout_width="185dp"

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SplasherScreen">
 
+    <!--This is the first thing that will appear when a user opens up the app for the first time-->
     <ImageView
         android:id="@+id/MedsUpLogo"
         android:layout_width="wrap_content"

@@ -8,6 +8,8 @@
     android:gravity="center"
     tools:context=".Profile">
 
+    <!--This is where the user information is taken from the user table entry it's connected to-->
+    <!--If the user exists, all of the details will be placed in the correct spots-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

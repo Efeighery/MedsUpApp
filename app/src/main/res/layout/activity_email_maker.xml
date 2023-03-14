@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".EmailMaker">
 
-
+    <!--This page allows users to send emails to relatives confirming that they just took their medication for the day-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,6 +19,7 @@
         android:textStyle="bold"
         />
 
+    <!--The receiver, subject and the body of the email must be filled in so that the email can be drafted up-->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -65,6 +66,8 @@
         android:gravity="start"
         />
 
+    <!--Once you click for the button to format your email, you'll be taken to your Gmail, where said email will be take all of the content inside it and put it in a draft-->
+    <!--Reminder that, you'll be asked to sign into Gmail, but you'll only need to do that once -->
     <Button
         android:layout_width="match_parent"
         android:layout_height="70dp"

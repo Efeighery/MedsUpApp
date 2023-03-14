@@ -26,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 /*
  *
- * @reference:  https://www.youtube.com/watch?v=kCzPizn2rhI/AddContact.java
+ * @reference:  https://www.youtube.com/watch?v=kCzPizn2rhI/EditProfile.java
  *
  */
 public class EditProfile extends AppCompatActivity {
@@ -37,7 +37,8 @@ public class EditProfile extends AppCompatActivity {
 
     TextView homeRedirector;
 
-    // This will be used to call on the Database table needed to save profile changes
+    // This will be used to call on the Database table needed to save profile
+    // changes
     DatabaseReference databaseReference;
 
     // This will help save the changes when implemented
@@ -68,12 +69,13 @@ public class EditProfile extends AppCompatActivity {
         saveChanges.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // If there were any changes made in these 5 Boolean methods, then the changes will be saved to that table entry
-                if(isNameChanged() || isAgeChanged() || isSexChanged() || isEmailChanged() || isPasswordChanged()){
+                // If there were any changes made in these 5 Boolean methods, then the changes
+                // will be saved to that table entry
+                if (isNameChanged() || isAgeChanged() || isSexChanged() || isEmailChanged() || isPasswordChanged()) {
                     Toast.makeText(EditProfile.this, "Changes saved", Toast.LENGTH_SHORT).show();
                 }
                 // Otherwise, if no changes were made this notification will show instead
-                else{
+                else {
                     Toast.makeText(EditProfile.this, "Nothing altered", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -83,82 +85,93 @@ public class EditProfile extends AppCompatActivity {
         homeRedirector.setOnClickListener(v -> startActivity(new Intent(EditProfile.this, MainActivity.class)));
     }
 
-    // From lines 86 to 155, these Boolean methods will be used to gather right variables when changes are made by the user
-    public boolean isNameChanged(){
-        // If the username matches what's in the text field, then the database will call on the child variable and replace the current entry to place in the newer change
-        if(userName.equals(editName.getText().toString())){
+    // From lines 86 to 165, these Boolean methods will be used to gather right
+    // variables when changes are made by the user
+    public boolean isNameChanged() {
+        // If the username matches what's in the text field, then the database will call
+        // on the child variable and replace the current entry to place in the newer
+        // change
+        if (userName.equals(editName.getText().toString())) {
             databaseReference.child(userName).child("name").setValue(editName.getText().toString());
 
             userName = editName.getText().toString();
             return true;
         }
         // Otherwise, this will be returned as false
-        else{
+        else {
             return false;
         }
     }
 
-    public boolean isAgeChanged(){
-        // If the age matches what's in the text field, then the database will call on the child variable and replace the current entry to place in the newer change
-        if(userAge.equals(editAge.getText().toString())){
+    public boolean isAgeChanged() {
+        // If the age matches what's in the text field, then the database will call on
+        // the child variable and replace the current entry to place in the newer change
+        if (userAge.equals(editAge.getText().toString())) {
             databaseReference.child(userAge).child("age").setValue(editAge.getText().toString());
 
             userAge = editAge.getText().toString();
             return true;
         }
         // Otherwise, this will be returned as false
-        else{
+        else {
             return false;
         }
     }
 
-    public boolean isSexChanged(){
-        // If the gender matches what's in the text field, then the database will call on the child variable and replace the current entry to place in the newer change
-        if(userSex.equals(editSex.getText().toString())){
+    public boolean isSexChanged() {
+        // If the gender matches what's in the text field, then the database will call
+        // on the child variable and replace the current entry to place in the newer
+        // change
+        if (userSex.equals(editSex.getText().toString())) {
             databaseReference.child(userSex).child("sex").setValue(editSex.getText().toString());
 
             userSex = editSex.getText().toString();
             return true;
         }
         // Otherwise, this will be returned as false
-        else{
+        else {
             return false;
         }
     }
 
-    public boolean isEmailChanged(){
-        // If the email matches what's in the text field, then the database will call on the child variable and replace the current entry to place in the newer change
-        if(userEmail.equals(editEmail.getText().toString())){
+    public boolean isEmailChanged() {
+        // If the email matches what's in the text field, then the database will call on
+        // the child variable and replace the current entry to place in the newer change
+        if (userEmail.equals(editEmail.getText().toString())) {
             databaseReference.child(userEmail).child("email").setValue(editEmail.getText().toString());
 
             userEmail = editEmail.getText().toString();
             return true;
         }
         // Otherwise, this will be returned as false
-        else{
+        else {
             return false;
         }
     }
 
-    public boolean isPasswordChanged(){
-        // If the password matches what's in the text field, then the database will call on the child variable and replace the current entry to place in the newer change
-        if(userPWD.equals(editPassword.getText().toString())){
+    public boolean isPasswordChanged() {
+        // If the password matches what's in the text field, then the database will call
+        // on the child variable and replace the current entry to place in the newer
+        // change
+        if (userPWD.equals(editPassword.getText().toString())) {
             databaseReference.child(userPWD).child("password").setValue(editPassword.getText().toString());
 
             userPWD = editPassword.getText().toString();
             return true;
         }
         // Otherwise, this will be returned as false
-        else{
+        else {
             return false;
         }
     }
 
-    // This particular data method will be used to call on the database table entry for a certain user
-    public void showData(){
+    // This particular data method will be used to call on the database table entry
+    // for a certain user
+    public void showData() {
         Intent intent = getIntent();
 
-        // Using an intent object, it calls on the entry's subfields and places them into their respective fields
+        // Using an intent object, it calls on the entry's subfields and places them
+        // into their respective fields
         userName = intent.getStringExtra("name");
         userAge = intent.getStringExtra("age");
         userSex = intent.getStringExtra("sex");

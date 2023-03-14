@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- This is the home page which contains all of the links to every function; each page also has an additional home page button for consistent and easier navigation -->
     <TextView
         android:id="@+id/greeting"
         android:layout_width="327dp"
@@ -21,8 +22,8 @@
 
     <Button
         android:id="@+id/medicSaveBtn"
-        android:layout_width="162dp"
-        android:layout_height="wrap_content"
+        android:layout_width="206dp"
+        android:layout_height="64dp"
         android:layout_below="@+id/greeting"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -30,7 +31,8 @@
         android:layout_marginStart="116dp"
         android:layout_marginTop="81dp"
         android:backgroundTint="#979797"
-        android:text="Save medication data" />
+        android:text="Save medication"
+        android:textSize="19dp" />
 
 
     <androidx.cardview.widget.CardView
@@ -124,6 +126,7 @@
         android:text="View profile"
         android:textSize="20dp" />
 
+    <!--The alarm maker and the email and message creator links are added to the home page for easier navigation and accessibility-->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

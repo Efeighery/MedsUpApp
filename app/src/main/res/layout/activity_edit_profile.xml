@@ -9,7 +9,7 @@
     android:gravity="center"
     tools:context=".EditProfile">
 
-
+    <!--This is where users can edit their profile details if they wish to do so-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,6 +40,8 @@
                 android:layout_marginTop="10dp"
                 />
 
+            <!--The fields can be altered here and once a user is happy with the changes, they can click the save button below-->
+            <!--The database table will then change to confirm the profile changes-->
             <EditText
                 android:id="@+id/editName"
                 android:layout_width="296dp"

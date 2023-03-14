@@ -7,6 +7,7 @@
     android:layout_margin="10dp"
     android:layout_height="wrap_content">
 
+    <!--This is the diagnosis entry that will appear when said entry is saved onto the database table-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -17,7 +18,7 @@
         android:text="Health diagnosis"
         />
 
-
+    <!--These buttons can let users edit or remove an entry which the database table will adjust to based on user selection-->
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:orientation="horizontal"

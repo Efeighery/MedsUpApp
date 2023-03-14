@@ -8,6 +8,7 @@
     android:padding="12dp"
     tools:context=".AddContact">
 
+    <!--This is where the contact list will be displayed to the user when some entries have been added prior to booting up the page-->
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -17,6 +18,7 @@
         />
 
 
+    <!--These buttons are for when a user wants to add a contact or wants to leave the page-->
     <Button android:id="@+id/homeBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" android:backgroundTint="#4CAF50"
