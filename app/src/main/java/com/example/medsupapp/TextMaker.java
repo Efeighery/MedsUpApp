@@ -3,6 +3,7 @@ package com.example.medsupapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -20,13 +21,14 @@ import android.widget.Toast;
  *
  *  Date e.g. 01/02/2023
  *
+ *
  * @author Eoghan Feighery, x19413886
  *
  */
 
 /*
  *
- * @reference:  https://www.youtube.com/watch?v=ofAL1C4jUJw/TextMaker.java
+ * @reference:  https://www.javatpoint.com/how-to-send-sms-in-android/TextMaker.java
  *
  */
 
@@ -48,15 +50,16 @@ public class TextMaker extends AppCompatActivity {
         sendMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try{
-                    SmsManager sms = SmsManager.getDefault();
+                String phoneNo = medNumber.getText().toString();
+                String message = medMessage.getText().toString();
 
-                    sms.sendTextMessage(medNumber.getText().toString(), null, medMessage.getText().toString(), null, null);
-                    Toast.makeText(TextMaker.this, "Message was sent", Toast.LENGTH_LONG).show();
-                }
-                catch(Exception exce){
-                    Toast.makeText(TextMaker.this, "Couldn't send message. Better try again", Toast.LENGTH_LONG).show();
-                }
+                Intent intent = new Intent(getApplicationContext(), TextMaker.class);
+                PendingIntent pen = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage(phoneNo, null, message, pen, null);
+
+                Toast.makeText(TextMaker.this, "Message sending complete", Toast.LENGTH_SHORT).show();
             }
         });
 
