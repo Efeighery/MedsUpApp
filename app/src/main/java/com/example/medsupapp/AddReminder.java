@@ -18,11 +18,9 @@ import android.widget.Button;
  * @reference: https://www.tutorialspoint.com/how-to-add-calendar-events-in-android-app
  */
 
-
 public class AddReminder extends AppCompatActivity {
 
     Button alarmBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +31,9 @@ public class AddReminder extends AppCompatActivity {
         alarmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AddReminder.this, NotificationCreator.class));
+                startActivity(new Intent(AddReminder.this, AlarmMaker.class));
             }
         });
-
     }
 
     // This is used to direct users to their Google AddReminder, where they can take their copied medication texts into the reminder name entry

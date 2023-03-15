@@ -1,32 +1,36 @@
 package com.example.medsupapp;
 
+import android.annotation.SuppressLint;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+
 import androidx.core.app.NotificationCompat;
-
-/*
- * Class name: AlarmReceiver.java
- * Date: 25/2/2023
- * @author: Eoghan Feighery, x19413886
- * Version: Revision 1
- */
-
-/*
- * @reference: https://gist.github.com/codinginflow/a26b41c07c1c2373f6aa92726ae92018/AlarmReceiver.java
- */
+import androidx.core.app.NotificationManagerCompat;
 
 public class AlarmReceiver extends BroadcastReceiver {
 
-    // This method is used to help access features through the NotificationCompat parameter so that a saved notification will work on the phone
+
+    @SuppressLint("MissingPermission")
     @Override
     public void onReceive(Context context, Intent intent) {
-        NotificationHelper notificationHelper = new NotificationHelper(context);
 
-        // This helps with setting up the notification layouts and schematics
-        NotificationCompat.Builder nb = notificationHelper.getChannelNotification();
+        Intent newAct = new Intent(context, NotificationActivity.class);
+        newAct.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-        // This is used to post a notification onto the phone's status bar
-        notificationHelper.getManager().notify(1, nb.build());
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, newAct, 0);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "medsupapp")
+                .setSmallIcon(R.drawable.app_logo)
+                .setContentTitle("Medication Reminder")
+                .setContentText("Take your medication now please")
+                .setAutoCancel(true)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setContentIntent(pendingIntent);
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
+        notificationManagerCompat.notify(123, builder.build());
     }
 }

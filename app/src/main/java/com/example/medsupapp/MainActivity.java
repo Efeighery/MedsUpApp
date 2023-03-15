@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         emailMak.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, EmailMaker.class)));
 
         // The button that can take a user to the Notification Maker Page is initialised and declared with an Intent object
-        notiMakeBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, NotificationCreator.class)));
+        notiMakeBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AlarmMaker.class)));
 
         recorderBtn.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SpeechToText.class));

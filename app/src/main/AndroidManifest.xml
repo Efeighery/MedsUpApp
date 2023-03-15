@@ -18,6 +18,15 @@
         android:theme="@style/Theme.MedsUpApp"
         tools:targetApi="31">
         <activity
+            android:name=".AddReminder"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlarmMaker"
+            android:exported="false" />
+        <activity
             android:name=".EditProfile"
             android:exported="false" />
         <activity
@@ -44,12 +53,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".AddReminder"
-            android:exported="false" />
-        <activity
-            android:name=".NotificationCreator"
-            android:exported="false" />
         <activity
             android:name=".SpeechToText"
             android:exported="false" />
