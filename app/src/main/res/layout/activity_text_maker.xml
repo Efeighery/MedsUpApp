@@ -8,18 +8,16 @@
     android:padding="15dp"
     tools:context=".TextMaker">
 
-    <!--Much like the Email Maker page, the phone number and text message body needs to be filled in to send the message, otherwise a prompt will appear-->
-
-    <EditText
-        android:id="@+id/textMsg"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:lines="10"
-        android:hint="Enter Text Message here"
-        android:inputType="textMultiLine"
-        android:layout_margin="15dp"
-        android:gravity="start"
+        android:text="Click on the first button to send a message via WhatsApp"
+        android:layout_marginTop="50dp"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="50dp"
         />
+
 
     <Button
         android:id="@+id/sendTextBtn"
