@@ -81,8 +81,8 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
         holder.editCon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ViewDialogContactEdit viewDialogContactEdit = new ViewDialogContactEdit();
-                viewDialogContactEdit.showDialog(context, contactItem.getcID(), contactItem.getName(), contactItem.getEmail(), contactItem.getPhone());
+                ViewDiaUpdateContact viewDiaUpdateContact = new ViewDiaUpdateContact();
+                viewDiaUpdateContact.showDialog(context, contactItem.getcID(), contactItem.getName(), contactItem.getEmail(), contactItem.getPhone());
             }
         });
 
@@ -96,7 +96,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
 
     }
 
-    public class ViewDialogContactEdit{
+    public class ViewDiaUpdateContact{
         // This method will be used for when the user wants to change a saved contact
         public void showDialog(Context context, String cID, String name, String email, String phone){
 

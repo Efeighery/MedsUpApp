@@ -78,8 +78,8 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
         holder.updateTerm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ViewDialogEditTerm viewDialogEditTerm = new ViewDialogEditTerm();
-                viewDialogEditTerm.showDialog(context, diagnosisItem.gethID(), diagnosisItem.getTerm());
+                ViewDiaTermUpdate viewDiaTermUpdate = new ViewDiaTermUpdate();
+                viewDiaTermUpdate.showDialog(context, diagnosisItem.gethID(), diagnosisItem.getTerm());
             }
         });
 
@@ -114,7 +114,7 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
         }
     }
 
-    public class ViewDialogEditTerm{
+    public class ViewDiaTermUpdate{
         // This method will be used for when the user wants to change a saved diagnosis
         public void showDialog(Context context, String hID, String term){
             // Like in the Contact file, a dialogue object will be set to the required functionality (in this case, updating an existing diagnosis)

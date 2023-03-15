@@ -96,8 +96,8 @@ public class MedicationRecyclerAdapter extends RecyclerView.Adapter<MedicationRe
         holder.updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ViewDialogEditMed viewDialogEditMed = new ViewDialogEditMed();
-                viewDialogEditMed.showDialog(context, medicationItem.getmID(), medicationItem.getName(), medicationItem.getRules());
+                ViewDiaMedUpdate viewDiaMedUpdate = new ViewDiaMedUpdate();
+                viewDiaMedUpdate.showDialog(context, medicationItem.getmID(), medicationItem.getName(), medicationItem.getRules());
             }
         });
 
@@ -134,7 +134,7 @@ public class MedicationRecyclerAdapter extends RecyclerView.Adapter<MedicationRe
         }
     }
 
-    public class ViewDialogEditMed{
+    public class ViewDiaMedUpdate{
         // This method will be used for when the user wants to change a saved medication
         public void showDialog(Context context, String mID, String name, String rules){
             // Like in the Medication file, a dialogue object will be set to the required functionality (in this case, updating an existing medication)
