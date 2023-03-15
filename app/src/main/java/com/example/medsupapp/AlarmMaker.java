@@ -87,9 +87,9 @@ public class AlarmMaker extends AppCompatActivity {
             public void onClick(View v) {
                 alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 Intent intent = new Intent(AlarmMaker.this, AlarmReceiver.class);
-                pendingIntent = PendingIntent.getBroadcast(AlarmMaker.this, 0, intent, 0);
+                pendingIntent = PendingIntent.getBroadcast(AlarmMaker.this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
-                alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+                alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
                 Toast.makeText(AlarmMaker.this, "Alarm confirmed", Toast.LENGTH_SHORT).show();
             }
         });

@@ -16,10 +16,10 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        Intent newAct = new Intent(context, NotificationActivity.class);
+        Intent newAct = new Intent(context, AlarmMaker.class);
         newAct.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, newAct, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, newAct, PendingIntent.FLAG_IMMUTABLE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "medsupapp")
                 .setSmallIcon(R.drawable.app_logo)
