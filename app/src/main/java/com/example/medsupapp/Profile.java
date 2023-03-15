@@ -48,7 +48,7 @@ public class Profile extends AppCompatActivity {
     private String userID;
 
     // This button will be used to bring the user from the profile page to the home page
-    private Button home;
+    private Button home, editBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +57,20 @@ public class Profile extends AppCompatActivity {
 
         // The home page button is declared and initialised with its XML ID
         home = (Button) findViewById(R.id.homeBtn);
+        editBtn = (Button) findViewById(R.id.editProfile);
 
         // See comment in line 48 for more information
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Profile.this, MainActivity.class));
+            }
+        });
+
+        editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profile.this, EditProfile.class));
             }
         });
 

@@ -21,11 +21,21 @@ import android.widget.Button;
 
 public class AddReminder extends AppCompatActivity {
 
+    Button alarmBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reminder);
+
+        alarmBtn = findViewById(R.id.notificationBtn);
+
+        alarmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AddReminder.this, NotificationCreator.class));
+            }
+        });
 
     }
 
