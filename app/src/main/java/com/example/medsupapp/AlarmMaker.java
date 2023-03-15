@@ -1,5 +1,7 @@
 package com.example.medsupapp;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
@@ -87,7 +89,7 @@ public class AlarmMaker extends AppCompatActivity {
             public void onClick(View v) {
                 alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 Intent intent = new Intent(AlarmMaker.this, AlarmReceiver.class);
-                pendingIntent = PendingIntent.getBroadcast(AlarmMaker.this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+                pendingIntent = PendingIntent.getBroadcast(AlarmMaker.this, 0, intent, FLAG_IMMUTABLE);
 
                 alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
                 Toast.makeText(AlarmMaker.this, "Alarm confirmed", Toast.LENGTH_SHORT).show();
@@ -98,7 +100,7 @@ public class AlarmMaker extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AlarmMaker.this, AlarmReceiver.class);
-                pendingIntent = PendingIntent.getBroadcast(AlarmMaker.this, 0, intent, 0);
+                pendingIntent = PendingIntent.getBroadcast(AlarmMaker.this, 0, intent, FLAG_IMMUTABLE);
 
                 if(alarmManager == null){
                     alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
