@@ -78,15 +78,6 @@
                 android:textSize="20dp"
                 android:textColor="@color/black"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="Home"
-                android:id="@+id/homeBtn"
-                android:textSize="18sp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="#54C148"
-                app:cornerRadius = "20dp"/>
 
             <Button
                 android:layout_width="match_parent"
