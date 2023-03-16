@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,121 +8,86 @@
     android:gravity="center"
     tools:context=".EditProfile">
 
-    <!--This operates very similar to the login page except this is for adding a new user in the user table in Firebase -->
+    <!--This is where the user information is taken from the user table entry it's connected to-->
+    <!--If the user exists, all of the details will be placed in the correct spots-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
-
-        <!--All entries have to be filled and in the correct format, otherwise a message will remind you to change to what the app does accept-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            android:padding="10dp"
+            android:padding="24dp"
             >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Edit Profile"
-                android:textSize="40sp"
-                android:id="@+id/titleDesc"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-black"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
+                android:id="@+id/message"
+                android:textSize="36sp"
                 android:textAlignment="center"
-                android:padding="5dp"
-                android:layout_marginTop="10dp"
-                />
-
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
             <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:id="@+id/editName"
-                android:layout_width="296dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="Enter name"
-                android:inputType="text"
-                android:textSize="20sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleDesc" />
-
+                android:layout_marginTop="40dp"
+                android:padding="8dp"
+                android:hint="Name"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
             <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:id="@+id/editAge"
-                android:layout_width="298dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="Enter age"
-                android:inputType="number"
-                android:textSize="20sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editName" />
-
+                android:layout_marginTop="40dp"
+                android:padding="8dp"
+                android:textSize="20dp"
+                android:hint="Age"
+                android:textColor="@color/black"/>
             <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:id="@+id/editGender"
-                android:layout_width="299dp"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="Enter gender (if applicable)"
-                android:inputType="text"
-                android:textSize="20sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editAge" />
-
-
+                android:padding="8dp"
+                android:hint="Gender"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
             <EditText
-                android:id="@+id/editEmail"
-                android:layout_width="301dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/editEmailAddress"
                 android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="Enter email"
-                android:inputType="textEmailAddress"
-                android:textSize="20sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editGender" />
-
+                android:padding="8dp"
+                android:hint="Email"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
             <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:id="@+id/editPassword"
-                android:layout_width="301dp"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="Enter password"
-                android:inputType="textPassword"
-                android:textSize="20sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+                android:padding="8dp"
+                android:hint="Password"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
+
 
             <Button
-                android:id="@+id/saveBtn"
-                android:layout_width="310dp"
-                android:layout_height="71dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="24dp"
-                android:backgroundTint="#8BC34A"
-                android:text="Save edits"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:cornerRadius = "20dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editPassword" />
-
-
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="#54C148"
+                android:id="@+id/updateProfile"
+                android:text="Save Changes"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
