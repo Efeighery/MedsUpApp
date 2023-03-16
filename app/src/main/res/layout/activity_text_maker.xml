@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:padding="15dp"
     tools:context=".TextMaker">
 
@@ -17,62 +19,34 @@
         />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/phoneNo"
-        android:ems="10"
+        android:maxLength="10"
+        android:padding="15sp"
         android:hint="Type number"
-        android:layout_marginTop="90dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
+        android:inputType="phone"
         />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/messageContent"
-        android:ems="10"
+        android:lines="5"
         android:hint="Type message"
-        android:layout_alignLeft="@+id/phoneNo"
-        android:layout_below="@+id/phoneNo"
         android:layout_marginTop="26dp"
         android:inputType="textMultiLine"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/phoneView"
-        android:layout_alignBaseline="@id/phoneNo"
-        android:layout_alignBottom="@id/phoneNo"
-        android:layout_toLeftOf="@id/phoneNo"
-        android:text="Phone Number:"
-        android:textSize="20dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/messageView"
-
-        android:layout_alignBaseline="@id/messageContent"
-        android:layout_alignBottom="@id/messageContent"
-        android:layout_toLeftOf="@id/messageContent"
-        android:text="Text Message:"
-        android:textSize="20dp"
-        />
 
     <Button
         android:id="@+id/sendSMS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/messageContent"
-        android:layout_alignLeft="@+id/messageContent"
-        android:layout_marginLeft="-52dp"
-        android:layout_marginTop="71dp"
         android:text="Send Text"
+        android:textAllCaps="false"
         android:backgroundTint="#4CAF50"
+        android:layout_marginTop="30dp"
         android:textSize="25dp" />
 
     <Button
@@ -87,4 +61,4 @@
         android:text="Exit"
         android:textSize="25dp" />
 
-</RelativeLayout>
+</LinearLayout>

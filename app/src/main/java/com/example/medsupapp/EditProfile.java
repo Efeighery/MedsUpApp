@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +50,9 @@ public class EditProfile extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = auth.getCurrentUser();
 
+        // Shows Profile Data
+        showProfileData(firebaseUser);
+
         saveBtn = findViewById(R.id.updateProfile);
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
@@ -57,9 +61,43 @@ public class EditProfile extends AppCompatActivity {
                 updateProfile(firebaseUser);
             }
         });
+    }
 
-        // Shows Profile Data
-        showProfileData(firebaseUser);
+    private void showProfileData(FirebaseUser firebaseUser){
+        String userID = firebaseUser.getUid();
+
+        // Extracts the user reference from the Users table
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User user = snapshot.getValue(User.class);
+
+                if(user != null){
+                    userName = firebaseUser.getDisplayName();
+                    userAge = user.age;
+                    userGender = user.sex;
+                    userEmail = user.email;
+                    userPassword = user.password;
+
+                    editName.setText(userName);
+                    editAge.setText(userAge);
+                    editGender.setText(userGender);
+                    editEmail.setText(userEmail);
+                    editPassword.setText(userPassword);
+                }
+                else{
+                    Toast.makeText(EditProfile.this, "Ran into errors", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(EditProfile.this, "Ran into some errors", Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
     private void updateProfile(FirebaseUser firebaseUser) {
@@ -72,42 +110,33 @@ public class EditProfile extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
         // If the fields are empty, these messages will inform them to add something inside them
-        if(name.isEmpty()){
-            Toast.makeText(this, "Enter full name!", Toast.LENGTH_SHORT).show();
+        if(TextUtils.isEmpty(userName)){
+            Toast.makeText(this, "Can't be empty!", Toast.LENGTH_SHORT).show();
             editName.setError("Name is NEEDED!");
             editName.requestFocus();
             return;
         }
-        else if(age.isEmpty()){
+        else if(TextUtils.isEmpty(userAge)){
+            Toast.makeText(this, "Can't be empty!", Toast.LENGTH_SHORT).show();
             editAge.setError("Age is NEEDED!");
             editAge.requestFocus();
             return;
         }
-        else if(gender.isEmpty()){
+        else if(TextUtils.isEmpty(userGender)){
+            Toast.makeText(this, "Can't be empty!", Toast.LENGTH_SHORT).show();
             editGender.setError("Something is NEEDED!");
             editGender.requestFocus();
             return;
         }
-        else if(email.isEmpty()){
+        else if(TextUtils.isEmpty(userEmail)){
+            Toast.makeText(this, "Can't be empty!", Toast.LENGTH_SHORT).show();
             editEmail.setError("Email is NEEDED!");
             editEmail.requestFocus();
             return;
         }
-        // Here the email address will be checked if it fits into this format (xxxx@gmail.com)
-        // If it doesn't, this error message will be shown
-        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editEmail.setError("Please provide valid credentials for email");
-            editEmail.requestFocus();
-            return;
-        }
-        else if(password.isEmpty()){
+        else if(TextUtils.isEmpty(userPassword)){
+            Toast.makeText(this, "Can't be empty!", Toast.LENGTH_SHORT).show();
             editPassword.setError("Password is NEEDED!");
-            editPassword.requestFocus();
-            return;
-        }
-        // If the password isn't 6 characters long, this error message will show instead
-        else if(password.length() < 7){
-            editPassword.setError("Password should be 6 characters");
             editPassword.requestFocus();
             return;
         }
@@ -155,94 +184,5 @@ public class EditProfile extends AppCompatActivity {
         }
     }
 
-    private void showProfileData(FirebaseUser firebaseUser){
-        String userID = firebaseUser.getUid();
 
-        // Extracts the user reference from the Users table
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User user = snapshot.getValue(User.class);
-
-                if(user != null){
-                    userName = firebaseUser.getDisplayName();
-                    userAge = user.age;
-                    userGender = user.sex;
-                    userEmail = user.email;
-                    userPassword = user.password;
-
-                    editName.setText(userName);
-                    editAge.setText(userAge);
-                    editGender.setText(userGender);
-                    editEmail.setText(userEmail);
-                    editPassword.setText(userPassword);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(EditProfile.this, "Ran into some errors", Toast.LENGTH_LONG).show();
-            }
-        });
-
-    }
-
-
-    private boolean isNameChanged(){
-        if(!userName.equals(editName.getText().toString())){
-            databaseReference.child(userName).child("name").setValue(editName.getText().toString());
-            userName = editName.getText().toString();
-
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    private boolean isAgeChanged(){
-        if(!userAge.equals(editAge.getText().toString())){
-            databaseReference.child(userName).child("age").setValue(editAge.getText().toString());
-            userAge = editAge.getText().toString();
-
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    private boolean isGenderChanged(){
-        if(!userGender.equals(editGender.getText().toString())){
-            databaseReference.child(userName).child("sex").setValue(editGender.getText().toString());
-            userGender = editGender.getText().toString();
-
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    private boolean isEmailChanged(){
-        if(!userEmail.equals(editEmail.getText().toString())){
-            databaseReference.child(userName).child("email").setValue(editEmail.getText().toString());
-            userEmail = editEmail.getText().toString();
-
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    private boolean isPasswordChanged(){
-        if(!userPassword.equals(editPassword.getText().toString())){
-            databaseReference.child(userName).child("password").setValue(editPassword.getText().toString());
-            userPassword = editPassword.getText().toString();
-
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
 }
