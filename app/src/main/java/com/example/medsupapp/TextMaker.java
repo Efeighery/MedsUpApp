@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 /*
  *  Class name: TextMaker.java
  *
@@ -28,34 +30,38 @@ import android.widget.Toast;
 
 /*
  *
- * @reference:  https://www.youtube.com/watch?v=wDl1ZsCKBtI&t=184s/TextMaker.java
+ * @reference:  https://www.javatpoint.com/how-to-send-sms-in-android/TextMaker.java
  *
  */
 
 public class TextMaker extends AppCompatActivity {
 
     private Button sendMessage, home;
-    private String notice = "Message can be made in WhatsApp";
+    private EditText mobile, message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_maker);
 
-
-        sendMessage = findViewById(R.id.sendTextBtn);
-        home = findViewById(R.id.returnConBtn);
+        mobile = findViewById(R.id.phoneNo);
+        message = findViewById(R.id.messageContent);
+        sendMessage = findViewById(R.id.sendSMS);
+        home = findViewById(R.id.homeBtn);
 
         sendMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent whatsApp = new Intent(Intent.ACTION_SEND);
+                String telephone = mobile.getText().toString();
+                String msg = message.getText().toString();
 
-                whatsApp.putExtra(Intent.EXTRA_TEXT, notice);
-                whatsApp.setType("text/plain");
+                Intent intent = new Intent(getApplicationContext(), TextMaker.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
 
-                whatsApp.setPackage("com.whatsapp");
-                startActivity(whatsApp);
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage(telephone, null, msg, pendingIntent, null);
+
+                Toast.makeText(TextMaker.this, "Message has been sent", Toast.LENGTH_LONG).show();
             }
 
         });

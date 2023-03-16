@@ -1,42 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="15dp"
     tools:context=".TextMaker">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click on the first button to send a message via WhatsApp"
-        android:layout_marginTop="50dp"
-        android:textSize="25dp"
+        android:text="Fill in the following fields to send a text message"
+        android:textSize="20dp"
         android:textColor="@color/black"
         android:layout_marginBottom="50dp"
         />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:id="@+id/phoneNo"
+        android:ems="10"
+        android:hint="Type number"
+        android:layout_marginTop="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        />
 
-    <Button
-        android:id="@+id/sendTextBtn"
-        android:layout_width="200dp"
-        android:layout_height="81dp"
-        android:text="Send Message"
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:id="@+id/messageContent"
+        android:ems="10"
+        android:hint="Type message"
+        android:layout_alignLeft="@+id/phoneNo"
+        android:layout_below="@+id/phoneNo"
+        android:layout_marginTop="26dp"
+        android:inputType="textMultiLine"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/phoneView"
+        android:layout_alignBaseline="@id/phoneNo"
+        android:layout_alignBottom="@id/phoneNo"
+        android:layout_toLeftOf="@id/phoneNo"
+        android:text="Phone Number:"
         android:textSize="20dp"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#1D83D5"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/messageView"
+
+        android:layout_alignBaseline="@id/messageContent"
+        android:layout_alignBottom="@id/messageContent"
+        android:layout_toLeftOf="@id/messageContent"
+        android:text="Text Message:"
+        android:textSize="20dp"
         />
 
     <Button
-        android:id="@+id/returnConBtn"
-        android:layout_width="200dp"
-        android:layout_height="81dp"
-        android:textSize="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#1D83D5"
-        android:text="Leave SMS Area" />
+        android:id="@+id/sendSMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/messageContent"
+        android:layout_alignLeft="@+id/messageContent"
+        android:layout_marginLeft="-52dp"
+        android:layout_marginTop="71dp"
+        android:text="Send Text"
+        android:backgroundTint="#4CAF50"
+        android:textSize="25dp" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/messageContent"
+        android:layout_alignLeft="@+id/messageContent"
+        android:layout_marginLeft="-9dp"
+        android:layout_marginTop="150dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Exit"
+        android:textSize="25dp" />
+
+</RelativeLayout>
