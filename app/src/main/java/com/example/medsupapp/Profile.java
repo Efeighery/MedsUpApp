@@ -58,14 +58,15 @@ public class Profile extends AppCompatActivity {
         // The home page button is declared and initialised with its XML ID
         edit = (Button) findViewById(R.id.update);
 
-
         // See comment in line 48 for more information
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(Profile.this, EditProfile.class));
                 passProfileData();
             }
         });
+
 
         // The current user is found in this line
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -116,14 +117,11 @@ public class Profile extends AppCompatActivity {
                 Toast.makeText(Profile.this, "Some type of error occurred", Toast.LENGTH_LONG).show();
             }
         });
-        
+
     }
     public void passProfileData() {
         // The current user is found in this line
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        // The database reference will be set to the Users table in the database
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
         // The current user will be initialised into this ID
         userID = firebaseUser.getUid();
@@ -151,6 +149,8 @@ public class Profile extends AppCompatActivity {
                     String gender = userPro.sex;
                     String pwd = userPro.password;
 
+                    Intent itt = new Intent(Profile.this, EditProfile.class);
+
                     // Then the TextViews will be filled to contain the profile credentials and display them to the user
                     greetings.setText("Welcome " + fullName + "!");
                     fullNameV.setText(fullName);
@@ -158,6 +158,8 @@ public class Profile extends AppCompatActivity {
                     ageV.setText(age);
                     genderV.setText(gender);
                     passwordV.setText(pwd);
+
+                    startActivity(itt);
                 }
             }
 
