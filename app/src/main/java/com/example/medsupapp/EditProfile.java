@@ -102,7 +102,7 @@ public class EditProfile extends AppCompatActivity {
 
                 // If the user object isn't null, the profile will then contain the data for said user
                 if(user != null){
-                    userName = firebaseUser.getDisplayName();
+                    userName = user.name;
                     userAge = user.age;
                     userGender = user.sex;
                     userEmail = user.email;
