@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -44,6 +45,7 @@ public class EditProfile extends AppCompatActivity {
     // The EditTexts and Buttons are declared and initalised here
     EditText editName, editAge, editGender, editEmail, editPassword;
     Button saveBtn;
+    TextView messageBox;
 
     // This will be used to help update each section of the profile
     String userName, userAge, userGender, userEmail, userPassword;
@@ -63,6 +65,8 @@ public class EditProfile extends AppCompatActivity {
         editGender = findViewById(R.id.editGender);
         editEmail = findViewById(R.id.editEmailAddress);
         editPassword = findViewById(R.id.editPassword);
+
+        messageBox = findViewById(R.id.message);
 
         auth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = auth.getCurrentUser();
@@ -190,7 +194,7 @@ public class EditProfile extends AppCompatActivity {
                     if(task.isSuccessful()){
                         // A request that can update user profiles and will display the username
                         UserProfileChangeRequest profileUpHauler = new UserProfileChangeRequest.Builder().
-                                setDisplayName(userName).build();
+                                setDisplayName(String.valueOf(messageBox)).build();
 
                         // The firebaseUser object will then the profile with the ChangeRequest variable
                         firebaseUser.updateProfile(profileUpHauler);
