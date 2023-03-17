@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 /*
- *  Class name: Log.java
+ *  Class name: Login.java
  *
  *  Version: Revision 1
  *
@@ -31,7 +31,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 /*
  *
- * @reference: https://www.youtube.com/watch?v=KB2BIm_m1Os&list=PL65Ccv9j4eZJ_bg0TlmxA7ZNbS8IMyl5i&index=3/Log.java
+ * @reference: https://www.youtube.com/watch?v=KB2BIm_m1Os&list=PL65Ccv9j4eZJ_bg0TlmxA7ZNbS8IMyl5i&index=3/Login.java
  *
  */
 

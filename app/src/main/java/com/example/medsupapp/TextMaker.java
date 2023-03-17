@@ -32,7 +32,7 @@ import org.w3c.dom.Text;
 
 /*
  *
- * @reference:  https://www.javatpoint.com/how-to-send-sms-in-android/TextMaker.java
+ * @reference:  https://www.youtube.com/watch?v=ofAL1C4jUJw/TextMaker.java
  *
  */
 

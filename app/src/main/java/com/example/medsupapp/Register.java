@@ -22,7 +22,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import org.w3c.dom.Text;
 
 /*
- *  Class name: Reg.java
+ *  Class name: Register.java
  *
  *  Version: Revision 1
  *
@@ -35,7 +35,7 @@ import org.w3c.dom.Text;
 /*
  *
  * @reference: https://www.youtube.com/watch?v=Z-RE1QuUWPg&list=PL65Ccv9j4eZJ_bg0TlmxA7ZNbS8IMyl5i&index=6
-/Reg.java
+/Register.java
  *
  */
 
