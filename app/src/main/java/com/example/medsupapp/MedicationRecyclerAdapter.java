@@ -92,6 +92,7 @@ public class MedicationRecyclerAdapter extends RecyclerView.Adapter<MedicationRe
         holder.medName.setText("Name: "+medicationItem.getName());
         holder.medRules.setText("Instructions: "+medicationItem.getRules());
 
+        /*
         // In these two button methods, the ViewDialog aspects will take the following contexts and Medication variables to make the methods work properly
         holder.updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +101,8 @@ public class MedicationRecyclerAdapter extends RecyclerView.Adapter<MedicationRe
                 viewDiaMedUpdate.showDialog(context, medicationItem.getmID(), medicationItem.getName(), medicationItem.getRules());
             }
         });
+        */
+
 
         holder.delBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,6 +137,7 @@ public class MedicationRecyclerAdapter extends RecyclerView.Adapter<MedicationRe
         }
     }
 
+    /*
     public class ViewDiaMedUpdate{
         // This method will be used for when the user wants to change a saved medication
         public void showDialog(Context context, String mID, String name, String rules){
@@ -193,6 +197,7 @@ public class MedicationRecyclerAdapter extends RecyclerView.Adapter<MedicationRe
             dialogue.show();
         }
     }
+    */
 
     public class ViewDeleteMedDialog{
         public void showDialog(Context context, String mID){

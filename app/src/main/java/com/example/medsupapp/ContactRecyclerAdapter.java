@@ -78,6 +78,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
 
         // In these two button methods, the ViewDialog aspects will take the following contexts and Contacts variables to make the methods work properly
 
+        /*
         holder.editCon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +86,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
                 viewDiaUpdateContact.showDialog(context, contactItem.getcID(), contactItem.getName(), contactItem.getEmail(), contactItem.getPhone());
             }
         });
-
+        */
         holder.delCon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +97,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
 
     }
 
+    /*
     public class ViewDiaUpdateContact{
         // This method will be used for when the user wants to change a saved contact
         public void showDialog(Context context, String cID, String name, String email, String phone){
@@ -158,6 +160,8 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
             dialog.show();
         }
     }
+
+     */
 
     public class ViewDialogContactRemoval{
         public void showDialog(Context context, String cID){

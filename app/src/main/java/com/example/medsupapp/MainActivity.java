@@ -8,7 +8,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import org.w3c.dom.Text;
+
+/*
+ *  Class name: MainActivity.java
+ *
+ *  Version: Revision 2
+ *
+ *  Date e.g. 18/03/2023
+ *
+ * @author Eoghan Feighery, x19413886
+ *
+ */
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView notiMakeBtn;
 
     // The ImageView files are used to navigate to the email/text message maker pages from the home menu
-    ImageView textMsg, emailMak;
+    ImageView textMsg, emailMak, leaveBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         userProBtn = findViewById(R.id.profileBtn);
 
         textMsg = findViewById(R.id.smsBtn);
+        leaveBtn = findViewById(R.id.logout);
         emailMak = findViewById(R.id.emailBox);
         notiMakeBtn = findViewById(R.id.notificationBtn);
 
@@ -61,11 +77,19 @@ public class MainActivity extends AppCompatActivity {
         conditionBtn.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, AddDiagnosis.class));
         });
-        userProBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Profile.class));
-            }
+        userProBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Profile.class)));
+
+
+        /*
+         *
+         * @reference: https://www.youtube.com/watch?v=DRBLazxi6Eg/MainActivity.java
+         *
+         */
+
+        // When a user signs out, the new password created in EditProfile should be granted access
+        leaveBtn.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(MainActivity.this, Login.class));
         });
     }
 }

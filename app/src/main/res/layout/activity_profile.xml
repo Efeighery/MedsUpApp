@@ -87,6 +87,16 @@
                 android:text="Edit Profile"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="#54C148"
+                android:id="@+id/exit"
+                android:text="Exit to Home Page"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

@@ -20,20 +20,35 @@
         android:textSize="25dp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/medicSaveBtn"
-        android:layout_width="206dp"
-        android:layout_height="64dp"
+
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="122dp"
+        android:layout_height="66dp"
         android:layout_below="@+id/greeting"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="81dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="77dp"
+        android:backgroundTint="#979797"
+        android:src="@drawable/leave"
+        android:textAllCaps="false"
+        android:textSize="19dp" />
+
+    <Button
+        android:id="@+id/medicSaveBtn"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/greeting"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="219dp"
+        android:layout_marginTop="514dp"
         android:backgroundTint="#979797"
         android:text="Save medication"
         android:textSize="19dp" />
-
 
     <androidx.cardview.widget.CardView
         android:layout_width="358dp"
@@ -80,8 +95,8 @@
         android:layout_below="@+id/greeting"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="461dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="431dp"
         android:backgroundTint="#979797"
         android:text="Create reminder"
         android:textSize="20dp" />
@@ -100,6 +115,7 @@
         android:text="Save diagnosis"
         android:textSize="20dp" />
 
+    <!--The alarm maker and the email and message creator links are added to the home page for easier navigation and accessibility-->
     <Button
         android:id="@+id/contactBtn"
         android:layout_width="162dp"
@@ -108,7 +124,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="217dp"
-        android:layout_marginTop="457dp"
+        android:layout_marginTop="429dp"
         android:backgroundTint="#979797"
         android:text="Add a contact"
         android:textSize="20dp" />
@@ -120,13 +136,12 @@
         android:layout_below="@+id/greeting"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="122dp"
-        android:layout_marginTop="545dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="514dp"
         android:backgroundTint="#979797"
         android:text="View profile"
         android:textSize="20dp" />
 
-    <!--The alarm maker and the email and message creator links are added to the home page for easier navigation and accessibility-->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

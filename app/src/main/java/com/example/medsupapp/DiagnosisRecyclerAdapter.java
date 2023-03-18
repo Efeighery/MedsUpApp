@@ -74,6 +74,7 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
         // The holder will be where the diagnosis information is updated
         holder.healthTerm.setText("Diagnosis: "+diagnosisItem.getTerm());
 
+        /*
         // In these two button methods, the ViewDialog aspects will take the following contexts and Diagnosis variables to make the methods work properly
         holder.updateTerm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +83,8 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
                 viewDiaTermUpdate.showDialog(context, diagnosisItem.gethID(), diagnosisItem.getTerm());
             }
         });
+
+         */
 
         holder.removeTerm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +117,7 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
         }
     }
 
+    /*
     public class ViewDiaTermUpdate{
         // This method will be used for when the user wants to change a saved diagnosis
         public void showDialog(Context context, String hID, String term){
@@ -167,6 +171,8 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
 
         }
     }
+
+     */
 
     public class ViewDialogTermDelete{
         public void showDialog(Context context, String hID){
