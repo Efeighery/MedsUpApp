@@ -77,7 +77,7 @@ public class AddDiagnosis extends AppCompatActivity {
 
         // The Firebase Database object is declared in here as is the RecyclerView
         Objects.requireNonNull(getSupportActionBar()).hide();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("hID");
 
         recyclerView = findViewById(R.id.reView);
         recyclerView.setHasFixedSize(false);
@@ -117,7 +117,7 @@ public class AddDiagnosis extends AppCompatActivity {
         userID = firebaseUser.getUid();
 
 
-        databaseReference.child("CONDITIONS").orderByChild(userID).addValueEventListener(new ValueEventListener() {
+        databaseReference.child("CONDITIONS").orderByChild("CONDITIONS").orderByChild("hID").addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

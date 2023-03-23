@@ -70,7 +70,7 @@ public class AddContact extends AppCompatActivity {
         setContentView(R.layout.activity_add_contact);
 
         // The Firebase Database object is declared in here as is the RecyclerView
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("cID");
 
         recyclerView = findViewById(R.id.reView);
         recyclerView.setHasFixedSize(false);
@@ -106,7 +106,7 @@ public class AddContact extends AppCompatActivity {
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         userID = firebaseUser.getUid();
 
-        databaseReference.child("CONTACTS").orderByChild(userID).addValueEventListener(new ValueEventListener() {
+        databaseReference.child("CONTACTS").orderByChild("CONTACTS").orderByChild("cID").addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

@@ -69,7 +69,7 @@ public class MedicationRecyclerAdapter extends RecyclerView.Adapter<MedicationRe
     public MedicationRecyclerAdapter(Context context, ArrayList<MedicationItem> medicationItemArrayList) {
         this.context = context;
         this.medicationItemArrayList = medicationItemArrayList;
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("mID");
     }
 
     @NonNull

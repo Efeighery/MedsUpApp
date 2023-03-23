@@ -53,7 +53,7 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
     public DiagnosisRecyclerAdapter(Context context, ArrayList<DiagnosisItem> diagnosisItemArrayList) {
         this.context = context;
         this.diagnosisItemArrayList = diagnosisItemArrayList;
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("hID");
     }
 
     @NonNull

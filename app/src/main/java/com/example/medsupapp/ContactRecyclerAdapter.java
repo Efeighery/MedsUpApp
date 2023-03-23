@@ -52,7 +52,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
     public ContactRecyclerAdapter(Context context, ArrayList<ContactItem> contactItemArrayList) {
         this.context = context;
         this.contactItemArrayList = contactItemArrayList;
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("cID");
     }
 
     @NonNull
