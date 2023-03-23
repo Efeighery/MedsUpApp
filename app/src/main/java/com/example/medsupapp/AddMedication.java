@@ -113,7 +113,7 @@ public class AddMedication extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         userID = firebaseUser.getUid();
 
-        databaseReference.child("MEDICATIONS").orderByChild("MEDICATIONS").orderByChild("mID").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("MEDICATIONS").orderByChild("mID").addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
