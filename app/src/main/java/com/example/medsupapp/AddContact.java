@@ -18,6 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -49,6 +51,9 @@ public class AddContact extends AppCompatActivity {
 
     // This will produce a list of saved contact entries
     RecyclerView recyclerView;
+
+    String userID;
+    FirebaseUser firebaseUser;
 
     // An ArrayList object will be made from the instantiable class
     ArrayList<ContactItem> contactItemArrayList;
@@ -97,6 +102,10 @@ public class AddContact extends AppCompatActivity {
 
     private void displayContacts() {
         // Here, the Database object will cycle through the Contact table and use an ID to help sort out the saved entries to display them in the list
+
+        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        userID = firebaseUser.getUid();
+
         databaseReference.child("CONTACTS").orderByChild("cID").addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
