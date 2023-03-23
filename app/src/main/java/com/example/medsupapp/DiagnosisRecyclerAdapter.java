@@ -113,7 +113,7 @@ public class DiagnosisRecyclerAdapter extends RecyclerView.Adapter<DiagnosisRecy
 
             healthTerm = itemView.findViewById(R.id.termBox);
             removeTerm = itemView.findViewById(R.id.removeBtn);
-            updateTerm = itemView.findViewById(R.id.updateBtn);
+            // updateTerm = itemView.findViewById(R.id.updateBtn);
         }
     }
 

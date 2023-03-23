@@ -132,7 +132,7 @@ public class MedicationRecyclerAdapter extends RecyclerView.Adapter<MedicationRe
             medName = itemView.findViewById(R.id.nameBox);
             medRules = itemView.findViewById(R.id.rulesBox);
 
-            updateBtn = itemView.findViewById(R.id.updateBtn);
+            //updateBtn = itemView.findViewById(R.id.updateBtn);
             delBtn = itemView.findViewById(R.id.removeBtn);
         }
     }

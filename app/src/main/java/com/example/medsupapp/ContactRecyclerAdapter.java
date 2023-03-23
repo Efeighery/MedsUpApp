@@ -220,7 +220,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
             conEmailAd = itemView.findViewById(R.id.emailCon);
 
             delCon = itemView.findViewById(R.id.removeBtn);
-            editCon = itemView.findViewById(R.id.updateBtn);
+            // editCon = itemView.findViewById(R.id.updateBtn);
 
         }
     }
