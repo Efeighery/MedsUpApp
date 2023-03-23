@@ -117,7 +117,7 @@ public class AddDiagnosis extends AppCompatActivity {
         userID = firebaseUser.getUid();
 
 
-        databaseReference.child("CONDITIONS").orderByChild("Diagnoses").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("CONDITIONS").orderByChild(userID).addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

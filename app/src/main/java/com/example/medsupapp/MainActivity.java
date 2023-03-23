@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView notiMakeBtn;
 
     // The ImageView files are used to navigate to the email/text message maker pages from the home menu
-    ImageView textMsg, emailMak, leaveBtn;
+    ImageView textMsg, emailMak;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         userProBtn = findViewById(R.id.profileBtn);
 
         textMsg = findViewById(R.id.smsBtn);
-        leaveBtn = findViewById(R.id.logout);
+        // leaveBtn = findViewById(R.id.logout);
         emailMak = findViewById(R.id.emailBox);
         notiMakeBtn = findViewById(R.id.notificationBtn);
 
@@ -86,10 +86,13 @@ public class MainActivity extends AppCompatActivity {
          *
          */
 
+        /*
         // When a user signs out, the new password created in EditProfile should be granted access
         leaveBtn.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(MainActivity.this, Login.class));
         });
+
+         */
     }
 }

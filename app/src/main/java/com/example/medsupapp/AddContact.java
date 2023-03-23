@@ -106,7 +106,7 @@ public class AddContact extends AppCompatActivity {
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         userID = firebaseUser.getUid();
 
-        databaseReference.child("CONTACTS").orderByChild("cID").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("CONTACTS").orderByChild(userID).addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

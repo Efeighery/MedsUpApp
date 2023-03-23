@@ -91,6 +91,8 @@ public class AlarmMaker extends AppCompatActivity {
                 Intent intent = new Intent(AlarmMaker.this, AlarmReceiver.class);
                 pendingIntent = PendingIntent.getBroadcast(AlarmMaker.this, 0, intent, FLAG_IMMUTABLE);
 
+                calendar = Calendar.getInstance();
+
                 alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
                 Toast.makeText(AlarmMaker.this, "Alarm confirmed", Toast.LENGTH_SHORT).show();
             }
