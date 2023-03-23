@@ -34,7 +34,9 @@
     <Button android:layout_width="185dp"
         android:layout_height="63dp" android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true" android:layout_centerInParent="true"
-        android:layout_marginStart="113dp" android:layout_marginBottom="393dp"
+        android:layout_marginStart="113dp"
+        app:cornerRadius="20dp"
+        android:layout_marginBottom="393dp"
         android:backgroundTint="#4CAF50" android:onClick="AddCalendarReminder"
         android:text="Add event to Google Calendar" android:textAllCaps="false"/>
 
@@ -56,12 +58,15 @@
         android:layout_marginStart="109dp"
         android:layout_marginBottom="191dp"
         android:backgroundTint="#4CAF50"
-        android:text="Create a medical notification"
-        android:textAllCaps="false" />
+        android:text="Create an alarm"
+        android:textAllCaps="false"
+        app:cornerRadius="20dp" />
 
     <Button android:layout_width="wrap_content"
         android:layout_height="50dp" android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" android:layout_marginBottom="68dp"
-        android:backgroundTint="#4CAF50" android:text="Return Home" android:id="@+id/homeBtn"
+        android:layout_centerHorizontal="true"
+        app:cornerRadius="20dp"
+        android:layout_marginBottom="68dp"
+        android:backgroundTint="#4CAF50" android:text="Exit to Home Page" android:id="@+id/homeBtn"
         android:textAllCaps="false"/>
 </RelativeLayout>

@@ -73,8 +73,9 @@
         android:layout_height="70dp"
         android:layout_margin="25dp"
         android:text="Format email"
+        app:cornerRadius="20dp"
         android:textSize="21sp"
-        android:backgroundTint="#107FD6"
+        android:backgroundTint="#4CAF50"
         android:id="@+id/sendEmailBtn"
         />
 
@@ -83,7 +84,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="5dp"
-        android:backgroundTint="#107FD6"
+        android:backgroundTint="#4CAF50"
+        app:cornerRadius="20dp"
         android:text="Return to HomePage"
         android:textSize="21sp" />
 

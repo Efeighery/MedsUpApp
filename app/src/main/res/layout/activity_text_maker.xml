@@ -41,24 +41,26 @@
 
     <Button
         android:id="@+id/sendSMS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="191dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#4CAF50"
         android:text="Send Text"
         android:textAllCaps="false"
-        android:backgroundTint="#4CAF50"
-        android:layout_marginTop="30dp"
-        android:textSize="25dp" />
+        android:textSize="30dp"
+        app:cornerRadius="20dp" />
 
     <Button
         android:id="@+id/homeBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="198dp"
+        android:layout_height="79dp"
         android:layout_below="@+id/messageContent"
         android:layout_alignLeft="@+id/messageContent"
         android:layout_marginLeft="-9dp"
         android:layout_marginTop="150dp"
         android:backgroundTint="#4CAF50"
         android:text="Exit"
-        android:textSize="25dp" />
+        android:textSize="30dp"
+        app:cornerRadius="20dp" />
 
 </LinearLayout>

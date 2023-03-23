@@ -24,12 +24,13 @@
         android:text="Go Home"
         android:textAllCaps="false"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/addMedBtn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="#509E53"
+        android:backgroundTint="#509E53"
+        app:cornerRadius="20dp"
         android:text="Add Medication"
         android:textColor="@color/white"
         android:textStyle="bold" />
