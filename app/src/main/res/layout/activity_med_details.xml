@@ -24,14 +24,14 @@
             />
 
         <ImageButton
-            android:layout_width="36dp"
-            android:layout_height="36dp"
             android:id="@+id/saveNoteButton"
-            android:src="@drawable/save"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="?attr/selectableItemBackgroundBorderless"
-            tools:ignore="ContentDescription" />
+            android:src="@drawable/save"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
     </RelativeLayout>
 
     <LinearLayout
@@ -71,5 +71,18 @@
             />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove note"
+        android:visibility="gone"
+        android:padding="15dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:id="@+id/removeMedNote"
+        android:textSize="19dp"
+        android:textColor="#FF0000"
+        />
 
 </RelativeLayout>

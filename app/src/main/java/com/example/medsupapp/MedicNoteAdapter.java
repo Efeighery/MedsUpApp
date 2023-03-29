@@ -1,6 +1,7 @@
 package com.example.medsupapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,17 @@ public class MedicNoteAdapter extends FirestoreRecyclerAdapter <MedicNotes, Medi
     protected void onBindViewHolder(@NonNull NoteViewHolder holder, int position, @NonNull MedicNotes medicNotes) {
         holder.medTitleView.setText(medicNotes.title);
         holder.medContentView.setText(medicNotes.content);
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent in = new Intent(context, MedDetails.class);
+            in.putExtra("title", medicNotes.title);
+            in.putExtra("content", medicNotes.content);
+
+            String medDocId = this.getSnapshots().getSnapshot(position).getId();
+            in.putExtra("medDocId", medDocId);
+
+            context.startActivity(in);
+        });
 
     }
 

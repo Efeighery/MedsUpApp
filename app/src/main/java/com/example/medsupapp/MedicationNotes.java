@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -34,12 +35,9 @@ public class MedicationNotes extends AppCompatActivity {
         addNoteBtn.setOnClickListener(v -> startActivity(new Intent(MedicationNotes.this, MedDetails.class)));
         homePager.setOnClickListener(v -> startActivity(new Intent(MedicationNotes.this, MainActivity.class)));
 
-        menuBtn.setOnClickListener(v -> MedNoteMenu());
         setUpRecycleView();
     }
 
-    private void MedNoteMenu() {
-    }
 
     void setUpRecycleView(){
         Query query = Box.getCollectionRefForMedicalNotes().orderBy("title", Query.Direction.ASCENDING);
