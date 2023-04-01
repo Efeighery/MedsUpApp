@@ -1,12 +1,12 @@
 package com.example.medsupapp;
 
-public class MedicNotes {
+public class MedicInfo {
     String title, content;
 
-    public MedicNotes() {
+    public MedicInfo() {
     }
 
-    public MedicNotes(String title, String content) {
+    public MedicInfo(String title, String content) {
         this.title = title;
         this.content = content;
     }

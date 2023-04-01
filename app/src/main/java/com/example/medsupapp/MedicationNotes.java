@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
-import android.widget.PopupMenu;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -40,8 +38,8 @@ public class MedicationNotes extends AppCompatActivity {
 
 
     void setUpRecycleView(){
-        Query query = Box.getCollectionRefForMedicalNotes().orderBy("title", Query.Direction.ASCENDING);
-        FirestoreRecyclerOptions<MedicNotes> options = new FirestoreRecyclerOptions.Builder<MedicNotes>().setQuery(query, MedicNotes.class).build();
+        Query query = MedicBox.getCollectionRefForMedicalNotes().orderBy("title", Query.Direction.ASCENDING);
+        FirestoreRecyclerOptions<MedicInfo> options = new FirestoreRecyclerOptions.Builder<MedicInfo>().setQuery(query, MedicInfo.class).build();
 
         reVe.setLayoutManager(new LinearLayoutManager(this));
 

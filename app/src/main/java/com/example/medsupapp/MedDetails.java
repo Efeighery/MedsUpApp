@@ -65,22 +65,22 @@ public class MedDetails extends AppCompatActivity {
             return;
         }
 
-        MedicNotes medicNotes = new MedicNotes();
+        MedicInfo medicNotes = new MedicInfo();
         medicNotes.setTitle(medicNoteTitle);
         medicNotes.setContent(medicNoteContent);
 
         saveMedNoteToFireStore(medicNotes);
     }
 
-    void saveMedNoteToFireStore(MedicNotes medicNotes){
+    void saveMedNoteToFireStore(MedicInfo medicNotes){
         DocumentReference documentReference;
 
         if(inEditMode){
             // For the situation where a note is updated
-            documentReference = Box.getCollectionRefForMedicalNotes().document(medDocId);
+            documentReference = MedicBox.getCollectionRefForMedicalNotes().document(medDocId);
         }else{
             // For when a user creates a note
-            documentReference = Box.getCollectionRefForMedicalNotes().document();
+            documentReference = MedicBox.getCollectionRefForMedicalNotes().document();
         }
 
         documentReference.set(medicNotes).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -88,11 +88,11 @@ public class MedDetails extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     // Note will be added
-                    Box.showToast(MedDetails.this, "Medical note has been added");
+                    MedicBox.showToast(MedDetails.this, "Medical note has been added");
                     finish();
                 }
                 else{
-                    Box.showToast(MedDetails.this, "An error occurred!");
+                    MedicBox.showToast(MedDetails.this, "An error occurred!");
                 }
             }
         });
@@ -100,17 +100,17 @@ public class MedDetails extends AppCompatActivity {
 
     void deleteMedNoteFromFireStore(){
         DocumentReference documentReference;
-        documentReference = Box.getCollectionRefForMedicalNotes().document(medDocId);
+        documentReference = MedicBox.getCollectionRefForMedicalNotes().document(medDocId);
         documentReference.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     // Note will be removed
-                    Box.showToast(MedDetails.this, "Medical note has been deleted");
+                    MedicBox.showToast(MedDetails.this, "Medical note has been deleted");
                     finish();
                 }
                 else{
-                    Box.showToast(MedDetails.this, "An error occurred!");
+                    MedicBox.showToast(MedDetails.this, "An error occurred!");
                 }
             }
         });

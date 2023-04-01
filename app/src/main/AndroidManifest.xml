@@ -20,6 +20,18 @@
         android:theme="@style/Theme.MedsUpApp"
         tools:targetApi="31">
         <activity
+            android:name=".DiagnosesNotes"
+            android:exported="false" />
+        <activity
+            android:name=".DiagnosisDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ContactNotes"
+            android:exported="false" />
+        <activity
+            android:name=".ContactDetails"
+            android:exported="false" />
+        <activity
             android:name=".MedDetails"
             android:exported="false" />
         <activity

@@ -13,16 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-public class MedicNoteAdapter extends FirestoreRecyclerAdapter <MedicNotes, MedicNoteAdapter.NoteViewHolder>{
+public class MedicNoteAdapter extends FirestoreRecyclerAdapter <MedicInfo, MedicNoteAdapter.NoteViewHolder>{
     Context context;
 
-    public MedicNoteAdapter(@NonNull FirestoreRecyclerOptions<MedicNotes> options, Context context) {
+    public MedicNoteAdapter(@NonNull FirestoreRecyclerOptions<MedicInfo> options, Context context) {
         super(options);
         this.context = context;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull NoteViewHolder holder, int position, @NonNull MedicNotes medicNotes) {
+    protected void onBindViewHolder(@NonNull NoteViewHolder holder, int position, @NonNull MedicInfo medicNotes) {
         holder.medTitleView.setText(medicNotes.title);
         holder.medContentView.setText(medicNotes.content);
 
