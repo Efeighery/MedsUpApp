@@ -64,18 +64,18 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, SpeechToText.class));
         });
         medicationBtn.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, AddMedication.class));
+            startActivity(new Intent(MainActivity.this, MedicationNotes.class));
         });
 
         conBtn.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, AddContact.class));
+            startActivity(new Intent(MainActivity.this, ContactNotes.class));
         });
 
         calBtn.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, AddReminder.class));
         });
         conditionBtn.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, AddDiagnosis.class));
+            startActivity(new Intent(MainActivity.this, DiagnosesNotes.class));
         });
         userProBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Profile.class)));
 

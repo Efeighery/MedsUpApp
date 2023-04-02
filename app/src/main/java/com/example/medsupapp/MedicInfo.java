@@ -1,5 +1,6 @@
 package com.example.medsupapp;
 
+
 public class MedicInfo {
     String title, content;
 

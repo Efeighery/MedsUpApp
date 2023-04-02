@@ -13,6 +13,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
+/*
+ *  Class name: MedicNoteAdapter.java
+ *
+ *  Version: Revision 1
+ *
+ *  Date e.g. 30/03/2023
+ *
+ * @author Eoghan Feighery, x19413886
+ *
+ */
+
+/*
+ *
+ * @reference: https://www.youtube.com/watch?v=jzVmjU2PFbg&lc=UgzLOyUfXTI67vUWmAN4AaABAg.9neYhJvabtS9nyWTcGnWoh/MedicNoteAdapter.java
+ *
+ */
+
 public class MedicNoteAdapter extends FirestoreRecyclerAdapter <MedicInfo, MedicNoteAdapter.NoteViewHolder>{
     Context context;
 

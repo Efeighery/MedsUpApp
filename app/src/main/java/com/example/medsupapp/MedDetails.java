@@ -13,6 +13,23 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 
+/*
+ *  Class name: MedDetails.java
+ *
+ *  Version: Revision 1
+ *
+ *  Date e.g. 30/03/2023
+ *
+ * @author Eoghan Feighery, x19413886
+ *
+ */
+
+/*
+ *
+ * @reference: https://www.youtube.com/watch?v=jzVmjU2PFbg&lc=UgzLOyUfXTI67vUWmAN4AaABAg.9neYhJvabtS9nyWTcGnWoh/MedDetails.java
+ *
+ */
+
 public class MedDetails extends AppCompatActivity {
 
     EditText editMedTitle, editMedContent;
