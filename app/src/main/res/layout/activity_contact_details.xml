@@ -1,9 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="17dp"
     tools:context=".ContactDetails">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleSquare"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pageTitle"
+            android:text="Add New Contact Note"
+            android:textSize="26sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+        <ImageButton
+            android:id="@+id/saveNoteButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/save"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleSquare"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginVertical="26dp"
+        android:backgroundTint="#F1F1F1"
+        android:background="#FFFFFF"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/conTitle"
+            android:hint="Enter title"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginVertical="8dp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/conInfo"
+            android:hint="Enter content"
+            android:textSize="20dp"
+            android:gravity="start"
+            android:minLines="15"
+            android:padding="12dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginVertical="8dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove note"
+        android:visibility="gone"
+        android:padding="15dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:id="@+id/removeConNote"
+        android:textSize="19dp"
+        android:textColor="#FF0000"
+        />
+
+</RelativeLayout>
