@@ -26,7 +26,7 @@ public class ContactNoteAdapter extends FirestoreRecyclerAdapter <ContactInfo, C
     @Override
     protected void onBindViewHolder(@NonNull NoteViewHolder holder, int position, @NonNull ContactInfo contactNotes) {
         holder.conTitleView.setText(contactNotes.title);
-        holder.conContactView.setText(contactNotes.content);
+        holder.conContentView.setText(contactNotes.content);
 
         holder.itemView.setOnClickListener(v -> {
             Intent in = new Intent(context, ContactDetails.class);
@@ -42,13 +42,13 @@ public class ContactNoteAdapter extends FirestoreRecyclerAdapter <ContactInfo, C
     }
 
     public class NoteViewHolder extends RecyclerView.ViewHolder{
-        TextView conTitleView, conContactView;
+        TextView conTitleView, conContentView;
 
         public NoteViewHolder(@NonNull View itemView){
             super(itemView);
 
             conTitleView = itemView.findViewById(R.id.conNoteTitleView);
-            conContactView = itemView.findViewById(R.id.conNoteContentView);
+            conContentView = itemView.findViewById(R.id.conNoteContentView);
         }
     }
 

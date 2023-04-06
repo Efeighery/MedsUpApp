@@ -8,9 +8,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:id="@+id/mediNoteTitleView"
+        android:id="@+id/diagNoteTitleView"
         android:layout_height="wrap_content"
-        android:text="Medication Note Title"
+        android:text="Diagnosis Note Title"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:layout_marginVertical="5dp"
@@ -19,8 +19,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mediNoteContentView"
-        android:text="Medication Note Content"
+        android:id="@+id/diagNoteContentView"
+        android:text="Diagnosis Note Content"
         android:maxLines="5"
         android:ellipsize="end"
         android:textColor="@color/black"
