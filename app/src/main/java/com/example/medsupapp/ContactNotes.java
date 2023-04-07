@@ -12,6 +12,25 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.Query;
 
+
+/*
+ *  Class name: ContactNotes.java
+ *
+ *  Version: Revision 1
+ *
+ *  Date e.g. 06/04/2023
+ *
+ * @author Eoghan Feighery, x19413886
+ *
+ */
+
+/*
+ *
+ * @reference: https://www.youtube.com/watch?v=jzVmjU2PFbg&lc=UgzLOyUfXTI67vUWmAN4AaABAg.9neYhJvabtS9nyWTcGnWoh/ContactNotes.java
+ *
+ */
+
+
 public class ContactNotes extends AppCompatActivity {
 
     FloatingActionButton addNoteBtn, homePager;

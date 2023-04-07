@@ -13,6 +13,23 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 
+/*
+ *  Class name: ContactDetails.java
+ *
+ *  Version: Revision 1
+ *
+ *  Date e.g. 06/04/2023
+ *
+ * @author Eoghan Feighery, x19413886
+ *
+ */
+
+/*
+ *
+ * @reference: https://www.youtube.com/watch?v=jzVmjU2PFbg&lc=UgzLOyUfXTI67vUWmAN4AaABAg.9neYhJvabtS9nyWTcGnWoh/ContactDetails.java
+ *
+ */
+
 public class ContactDetails extends AppCompatActivity {
 
     EditText editConTitle, editConContent;
