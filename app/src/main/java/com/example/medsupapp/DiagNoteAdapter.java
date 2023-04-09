@@ -32,8 +32,11 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 public class DiagNoteAdapter extends FirestoreRecyclerAdapter <DiagnosisInfo, DiagNoteAdapter.NoteViewHolder> {
 
+    // A Context objects is made and declared in the constructor object
     Context context;
 
+
+    // The Instantiable class is declared as a sort of ArrayList object in the constructor
     public DiagNoteAdapter(@NonNull FirestoreRecyclerOptions<DiagnosisInfo> options, Context context) {
         super(options);
         this.context = context;
@@ -41,22 +44,27 @@ public class DiagNoteAdapter extends FirestoreRecyclerAdapter <DiagnosisInfo, Di
 
     @Override
     protected void onBindViewHolder(@NonNull NoteViewHolder holder, int position, @NonNull DiagnosisInfo diagNotes) {
+        // With an object of the instantiable class and the NoteViewHolder, the variables are declared and set in their TextView formats
         holder.diaTitleView.setText(diagNotes.title);
         holder.diaContentView.setText(diagNotes.content);
 
+        // An itemView object is used to combine the two parts of a note as one
         holder.itemView.setOnClickListener(v -> {
             Intent in = new Intent(context, ContactDetails.class);
 
             in.putExtra("title", diagNotes.title);
             in.putExtra("content", diagNotes.content);
 
+            // An ID String is used to help find a specific note (As a Snapshot of saved data)
             String diaDocId = this.getSnapshots().getSnapshot(position).getId();
             in.putExtra("diaDocId", diaDocId);
 
+            // The Intent object is triggered via the Context object
             context.startActivity(in);
         });
     }
 
+    // This is used for binding notes into the ViewHolder, with the TextViews declared and initialised accordingly
     public class NoteViewHolder extends RecyclerView.ViewHolder{
 
         TextView diaTitleView, diaContentView;
@@ -68,6 +76,8 @@ public class DiagNoteAdapter extends FirestoreRecyclerAdapter <DiagnosisInfo, Di
         }
     }
 
+
+    // The diagnosis note item is used for the View object to help display a note and its diagnosis
     @NonNull
     @Override
     public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

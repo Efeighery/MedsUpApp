@@ -32,10 +32,10 @@
             android:name=".ContactDetails"
             android:exported="false" />
         <activity
-            android:name=".MedDetails"
+            android:name=".MedicDetails"
             android:exported="false" />
         <activity
-            android:name=".MedicationNotes"
+            android:name=".MedicNotes"
             android:exported="false" />
         <activity
             android:name=".EditProfile"

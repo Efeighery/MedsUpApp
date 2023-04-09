@@ -4,13 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
-import com.google.firebase.auth.FirebaseAuth;
-
-import org.w3c.dom.Text;
 
 /*
  *  Class name: MainActivity.java
@@ -64,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, SpeechToText.class));
         });
         medicationBtn.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, MedicationNotes.class));
+            startActivity(new Intent(MainActivity.this, MedicNotes.class));
         });
 
         conBtn.setOnClickListener(v -> {

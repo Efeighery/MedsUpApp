@@ -26,10 +26,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class DiagBox {
 
     static void showToast(Context context, String message){
+        // This is used to help display messages
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
     static CollectionReference getCollectionRefForDiagnosisNotes(){
+        // Using the FirebaseUser object, this method will check for the user that's currently logged into the app.
+        // Then it will use the user's ID, to look for notes saved by that user in the FireStore database; this means that only the notes saved by a user will be shown to them
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         return FirebaseFirestore.getInstance().collection("Diagnoses").document(firebaseUser.getUid()).collection("MyDiagnosisNotes");
     }

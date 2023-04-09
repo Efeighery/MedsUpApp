@@ -55,7 +55,7 @@ public class ContactNoteAdapter extends FirestoreRecyclerAdapter <ContactInfo, C
             in.putExtra("title", contactNotes.title);
             in.putExtra("content", contactNotes.content);
 
-            // An ID String is used to help find a specific note (As a Snapshot of saved dara
+            // An ID String is used to help find a specific note (As a Snapshot of saved data)
             String conDocId = this.getSnapshots().getSnapshot(position).getId();
             in.putExtra("conDocId", conDocId);
 
