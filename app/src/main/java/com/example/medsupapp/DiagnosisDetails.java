@@ -84,7 +84,7 @@ public class DiagnosisDetails extends AppCompatActivity {
 
     // This is used to help remove a specified note from the database
     private void deleteDiagNoteFromFireStore() {
-        // The note title and content is acquired here and used to save a new note
+        // The note title and content is acquired here and used to delete a new note
         DocumentReference documentReference;
 
         // Once again, the FireStore database object is created and the ID object is used to find a requested note
