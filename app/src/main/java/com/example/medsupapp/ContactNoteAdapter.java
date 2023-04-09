@@ -32,8 +32,10 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 public class ContactNoteAdapter extends FirestoreRecyclerAdapter <ContactInfo, ContactNoteAdapter.NoteViewHolder> {
 
+    // A Context objects is made and declared in the constructor object
     Context context;
 
+    // The Instantiable class is declared as a sort of ArrayList object in the constructor
     public ContactNoteAdapter(@NonNull FirestoreRecyclerOptions<ContactInfo> options, Context context){
         super(options);
         this.context = context;
@@ -42,22 +44,27 @@ public class ContactNoteAdapter extends FirestoreRecyclerAdapter <ContactInfo, C
 
     @Override
     protected void onBindViewHolder(@NonNull NoteViewHolder holder, int position, @NonNull ContactInfo contactNotes) {
+        // With an object of the instantiable class and the NoteViewHolder, the variables are declared and set in their TextView formats
         holder.conTitleView.setText(contactNotes.title);
         holder.conContentView.setText(contactNotes.content);
 
+        // An itemView object is used to combine the two parts of a note as one
         holder.itemView.setOnClickListener(v -> {
             Intent in = new Intent(context, ContactDetails.class);
 
             in.putExtra("title", contactNotes.title);
             in.putExtra("content", contactNotes.content);
 
+            // An ID String is used to help find a specific note (As a Snapshot of saved dara
             String conDocId = this.getSnapshots().getSnapshot(position).getId();
             in.putExtra("conDocId", conDocId);
 
+            // The Intent object is triggered via the Context object
             context.startActivity(in);
         });
     }
 
+    // This is used for binding notes into the ViewHolder, with the TextViews declared and initialised accordingly
     public class NoteViewHolder extends RecyclerView.ViewHolder{
         TextView conTitleView, conContentView;
 
@@ -69,6 +76,7 @@ public class ContactNoteAdapter extends FirestoreRecyclerAdapter <ContactInfo, C
         }
     }
 
+    // The contact note item is used for the View object to help display a note and its contents
     @NonNull
     @Override
     public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
