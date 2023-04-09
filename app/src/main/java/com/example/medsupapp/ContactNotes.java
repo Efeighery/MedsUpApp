@@ -40,7 +40,7 @@ public class ContactNotes extends AppCompatActivity {
     RecyclerView reVe;
 
     // A Menu button for decoration
-    ImageButton menuBtn;
+    // ImageButton menuBtn;
 
     // The Adapter object that's used to house a note object
     ContactNoteAdapter adapter;
@@ -55,7 +55,7 @@ public class ContactNotes extends AppCompatActivity {
         homePager = findViewById(R.id.homeBtn);
 
         reVe = findViewById(R.id.recyclerView);
-        menuBtn = findViewById(R.id.menuMedButton);
+        // menuBtn = findViewById(R.id.menuMedButton);
 
         // When a user clicks the button to add a note, they'll be taken to the page that lets them do that
         addNoteBtn.setOnClickListener(v -> startActivity(new Intent(ContactNotes.this, ContactDetails.class)));

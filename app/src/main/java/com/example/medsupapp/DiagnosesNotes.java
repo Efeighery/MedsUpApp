@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageButton;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -38,21 +37,22 @@ public class DiagnosesNotes extends AppCompatActivity {
     RecyclerView reVe;
 
     // A Menu button for decoration
-    ImageButton menuBtn;
+    // ImageButton menuBtn;
+
     // The Adapter object that's used to house a note object
     DiagNoteAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_diagnoses_notes);
+        setContentView(R.layout.activity_diagnosis_notes);
 
         // The previously declared XML variables are initialised and recalibrated with their IDs
         addNoteBtn = findViewById(R.id.addNote);
         homePager = findViewById(R.id.homeBtn);
 
         reVe = findViewById(R.id.recyclerView);
-        menuBtn = findViewById(R.id.menuMedButton);
+        // menuBtn = findViewById(R.id.menuMedButton);
 
         // When a user doesn't want to make a note, they can click the home button to go back to the main page
         // When a user clicks the button to add a note, they'll be taken to the page that lets them do that

@@ -40,7 +40,7 @@ public class MedicNotes extends AppCompatActivity {
     RecyclerView reVe;
 
     // A Menu button for decoration
-    ImageButton menuBtn;
+    // ImageButton menuBtn;
 
     // The Adapter object that's used to house a note object
     MedicNoteAdapter adapter;
@@ -55,7 +55,7 @@ public class MedicNotes extends AppCompatActivity {
         homePager = findViewById(R.id.homeBtn);
 
         reVe = findViewById(R.id.recyclerView);
-        menuBtn = findViewById(R.id.menuMedButton);
+        // menuBtn = findViewById(R.id.menuMedButton);
 
         // When a user doesn't want to make a note, they can click the home button to go back to the main page
         // When a user clicks the button to add a note, they'll be taken to the page that lets them do that
