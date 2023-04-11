@@ -15,19 +15,22 @@ import android.widget.Button;
  */
 
 /*
- * @reference: https://www.tutorialspoint.com/how-to-add-calendar-events-in-android-app
+ * @reference: https://www.tutorialspoint.com/how-to-add-calendar-events-in-android-app/AddReminder.java
  */
 
 public class AddReminder extends AppCompatActivity {
 
+    // The Calendar Button will be declared here
     Button alarmBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reminder);
 
+        // The Calendar Button is also initialised here
         alarmBtn = findViewById(R.id.notificationBtn);
 
+        // If the user wants to make a notification alarm instead, they can click this button to go the Alarm Maker page
         alarmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

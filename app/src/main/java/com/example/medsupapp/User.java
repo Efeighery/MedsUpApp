@@ -1,5 +1,23 @@
 package com.example.medsupapp;
 
+/*
+ *  Class name: User.java
+ *
+ *  Version: Revision 1
+ *
+ *  Date e.g. 08/02/2023
+ *
+ * @author Eoghan Feighery, x19413886
+ *
+ */
+
+/*
+ *
+ * @reference: https://www.youtube.com/watch?v=-plgl1EQ21Q&list=PL65Ccv9j4eZJ_bg0TlmxA7ZNbS8IMyl5i&index=7/User.java
+ *
+ */
+
+
 // This is needed to both save user account details and also to retrieve the details to display them in the user profile
 public class User {
 

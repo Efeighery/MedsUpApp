@@ -19,7 +19,7 @@ package com.example.medsupapp;
 
 public class ContactInfo {
 
-    // Variables needed to save a created note in the FireStore
+    // Two variables needed to save a created note in the FireStore
     String title, content;
 
     // Empty constructor for initialisation

@@ -31,8 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 
 /*
  *
- * @reference: https://www.youtube.com/watch?v=-plgl1EQ21Q&list=PL65Ccv9j4eZJ_bg0TlmxA7ZNbS8IMyl5i&index=7
-/Profile.java
+ * @reference: https://www.youtube.com/watch?v=-plgl1EQ21Q&list=PL65Ccv9j4eZJ_bg0TlmxA7ZNbS8IMyl5i&index=7/Profile.java
  *
  */
 
