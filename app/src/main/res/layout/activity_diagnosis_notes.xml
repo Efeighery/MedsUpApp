@@ -14,7 +14,7 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginLeft="60dp"
-        android:text="Add Medication Notes"
+        android:text="Add Diagnosis Notes"
         android:textSize="25dp" />
 
     <RelativeLayout
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pageTitle"
-            android:text="Medic Notes"
+            android:text="Diagnosis Notes"
             android:textSize="26sp"
             android:textColor="@color/black"
             android:textStyle="bold"
