@@ -47,7 +47,7 @@ public class MedicDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_med_details);
+        setContentView(R.layout.activity_medication_details);
 
         // The XML variables are initialised by their IDs
         editMedTitle = findViewById(R.id.medTitle);
