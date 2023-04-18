@@ -146,7 +146,7 @@ public class DiagnosisDetails extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     // If all goes according to plan, then the note will be saved to the FireStore database
-                    ContactBox.showToast(DiagnosisDetails.this, "Contact note has been added");
+                    ContactBox.showToast(DiagnosisDetails.this, "Diagnosis note has been added");
                     finish();
                 } else {
                     // Or if an error happens mid-save, this message will appears
