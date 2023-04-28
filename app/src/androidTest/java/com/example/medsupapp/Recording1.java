@@ -34,7 +34,7 @@ import org.junit.runner.RunWith;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class Part1 {
+public class Recording1 {
 
     @Rule
     public ActivityScenarioRule<SplasherScreen> mActivityScenarioRule =
@@ -60,7 +60,7 @@ public class Part1 {
                 allOf(withId(R.id.logInRedirection), withText("Already signed in?"),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("androidx.cardview.widget.CardView")),
+                                        withClassName(is("androidx.card-view.widget.CardView")),
                                         0),
                                 7),
                         isDisplayed()));

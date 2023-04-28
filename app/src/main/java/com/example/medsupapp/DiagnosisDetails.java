@@ -1,13 +1,13 @@
 package com.example.medsupapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -83,7 +83,7 @@ public class DiagnosisDetails extends AppCompatActivity {
     }
 
     // This is used to help remove a specified note from the database
-    private void deleteDiagNoteFromFireStore() {
+     void deleteDiagNoteFromFireStore() {
         // The note title and content is acquired here and used to delete a new note
         DocumentReference documentReference;
 
