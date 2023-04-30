@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:164553347862:android:31c87e0d21f5972f20f637",
         "android_client_info": {
-          "package_name": "com.example.medsupapp"
+          "package_name": "com.eoghanf.medsupapp"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "164553347862-3hpohhdvrvch7uqathi8580t65sspk1j.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.medsupapp",
+            "package_name": "com.eoghanf.medsupapp",
             "certificate_hash": "c5a0daa03001798ba8477ea71073b1f07437bd64"
           }
         },

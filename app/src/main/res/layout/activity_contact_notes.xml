@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:padding="17dp"
     android:layout_height="match_parent"
-    tools:context=".ContactNotes">
+    tools:context="com.eoghanf.medsupapp.ContactNotes">
 
     <TextView
         android:id="@+id/greeting"

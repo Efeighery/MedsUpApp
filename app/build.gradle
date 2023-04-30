@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.medsupapp'
+    namespace 'com.eoghanf.medsupapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.medsupapp"
+        applicationId "com.eoghanf.medsupapp"
         minSdk 27
         targetSdk 33
         versionCode 1
@@ -19,7 +19,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

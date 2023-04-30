@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Register">
+    tools:context="com.eoghanf.medsupapp.Register">
 
     <!--This operates very similar to the login page except this is for adding a new user in the user table in Firebase -->
     <androidx.cardview.widget.CardView

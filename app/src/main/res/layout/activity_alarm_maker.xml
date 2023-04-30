@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_vertical"
     android:background="@drawable/alarm"
-    tools:context=".AlarmMaker">
+    tools:context="com.eoghanf.medsupapp.AlarmMaker">
 
     <TextView
         android:layout_width="wrap_content"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="17dp"
-    tools:context=".MedicNotes">
+    tools:context="com.eoghanf.medsupapp.MedicNotes">
 
     <TextView
         android:id="@+id/greeting"

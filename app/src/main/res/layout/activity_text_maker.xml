@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="15dp"
-    tools:context=".TextMaker">
+    tools:context="com.eoghanf.medsupapp.TextMaker">
 
     <TextView
         android:layout_width="wrap_content"

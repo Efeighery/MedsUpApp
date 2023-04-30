@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Profile">
+    tools:context="com.eoghanf.medsupapp.Profile">
 
     <!--This is where the user information is taken from the user table entry it's connected to-->
     <!--If the user exists, all of the details will be placed in the correct spots-->
