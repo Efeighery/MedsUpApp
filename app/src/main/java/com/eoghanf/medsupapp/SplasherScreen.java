@@ -1,13 +1,11 @@
 package com.eoghanf.medsupapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
-import com.example.medsupapp.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 /*
  *  Class name: SplasherScreen.java
