@@ -9,8 +9,6 @@ import android.content.Intent;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.example.medsupapp.R;
-
 /*
  * Class name: AlarmMaker.java
  * Date: 15/3/2022
