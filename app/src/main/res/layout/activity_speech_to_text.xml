@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.eoghanf.medsupapp.SpeechToText">
+    tools:context="com.example.medsupapp.SpeechToText">
 
     <!--This is where the user can activate a microphone and speak out their medication instructions to produce the text from the recogniser tech-->
     <EditText android:id="@+id/textArea"

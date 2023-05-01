@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="5dp"
     android:layout_height="match_parent"
-    tools:context="com.eoghanf.medsupapp.EmailMaker">
+    tools:context="com.example.medsupapp.EmailMaker">
 
     <!--This page allows users to send emails to relatives confirming that they just took their medication for the day-->
     <TextView

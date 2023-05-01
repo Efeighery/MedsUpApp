@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.eoghanf.medsupapp.SplasherScreen">
+    tools:context="com.example.medsupapp.SplasherScreen">
 
     <!--This is the first thing that will appear when a user opens up the app for the first time-->
     <ImageView

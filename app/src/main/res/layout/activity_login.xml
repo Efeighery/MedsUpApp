@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.eoghanf.medsupapp.Login">
+    tools:context="com.example.medsupapp.Login">
 
     <!--Here, you'll be asked to log in with your email and password to enter the application-->
     <androidx.cardview.widget.CardView

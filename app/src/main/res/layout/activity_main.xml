@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.eoghanf.medsupapp.MainActivity">
+    tools:context="com.example.medsupapp.MainActivity">
 
     <!-- This is the home page which contains all of the links to every function; each page also has an additional home page button for consistent and easier navigation -->
     <TextView

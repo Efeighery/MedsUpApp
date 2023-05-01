@@ -25,40 +25,40 @@
         android:theme="@style/Theme.MedsUpApp"
         tools:targetApi="31">
         <activity
-            android:name="com.eoghanf.medsupapp.DiagnosesNotes"
+            android:name="com.example.medsupapp.DiagnosesNotes"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.DiagnosisDetails"
+            android:name="com.example.medsupapp.DiagnosisDetails"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.ContactNotes"
+            android:name="com.example.medsupapp.ContactNotes"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.ContactDetails"
+            android:name="com.example.medsupapp.ContactDetails"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.MedicDetails"
+            android:name="com.example.medsupapp.MedicDetails"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.MedicNotes"
+            android:name="com.example.medsupapp.MedicNotes"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.EditProfile"
+            android:name="com.example.medsupapp.EditProfile"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.AddReminder"
+            android:name="com.example.medsupapp.AddReminder"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.AlarmMaker"
+            android:name="com.example.medsupapp.AlarmMaker"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.TextMaker"
+            android:name="com.example.medsupapp.TextMaker"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.EmailMaker"
+            android:name="com.example.medsupapp.EmailMaker"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.SplasherScreen"
+            android:name="com.example.medsupapp.SplasherScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,22 +67,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.eoghanf.medsupapp.SpeechToText"
+            android:name="com.example.medsupapp.SpeechToText"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.Profile"
+            android:name="com.example.medsupapp.Profile"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.Register"
+            android:name="com.example.medsupapp.Register"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.Login"
+            android:name="com.example.medsupapp.Login"
             android:exported="false" />
         <activity
-            android:name="com.eoghanf.medsupapp.MainActivity"
+            android:name="com.example.medsupapp.MainActivity"
             android:exported="false" />
 
-        <receiver android:name="com.eoghanf.medsupapp.AlarmReceiver" />
+        <receiver android:name="com.example.medsupapp.AlarmReceiver" />
     </application>
 
 </manifest>

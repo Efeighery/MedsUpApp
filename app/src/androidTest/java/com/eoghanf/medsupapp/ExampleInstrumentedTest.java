@@ -1,4 +1,4 @@
-package com.eoghanf.medsupapp;
+package com.example.medsupapp;
 
 import android.content.Context;
 
