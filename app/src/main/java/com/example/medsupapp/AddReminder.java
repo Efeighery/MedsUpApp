@@ -7,8 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.eoghanf.medsupapp.R;
-
 /*
  * Class name: AddReminder.java
  * Date: 28/12/2022

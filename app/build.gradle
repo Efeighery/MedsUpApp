@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.eoghanf.medsupapp'
+    namespace 'com.example.medsupapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.eoghanf.medsupapp"
+        applicationId "com.example.medsupapp"
         minSdk 27
         targetSdk 33
         versionCode 1

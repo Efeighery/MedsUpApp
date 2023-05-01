@@ -8,8 +8,6 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.eoghanf.medsupapp.R;
-
 /*
  *  Class name: EmailMaker.java
  *

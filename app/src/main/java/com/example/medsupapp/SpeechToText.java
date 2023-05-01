@@ -15,8 +15,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.eoghanf.medsupapp.R;
-
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Objects;

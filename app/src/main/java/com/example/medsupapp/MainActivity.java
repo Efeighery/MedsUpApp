@@ -7,8 +7,6 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.eoghanf.medsupapp.R;
-
 /*
  *  Class name: MainActivity.java
  *
